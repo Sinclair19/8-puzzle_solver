@@ -90,6 +90,7 @@ def main():
     print("Welcome to my 8-Puzzle Solver.")
     puzzle = get_initial_puzzle()
     algorithm_choice = get_algorithm_choice()
+    show_trace = get_trace_choice()
     heuristic_function = get_heuristic_function(algorithm_choice)
 
     print("\nInitial puzzle:")
@@ -99,6 +100,7 @@ def main():
     solution_node, nodes_expanded, max_queue_size = general_search(
         puzzle,
         heuristic_function,
+        show_trace,
     )
 
     if solution_node is None:
@@ -194,6 +196,13 @@ def get_algorithm_choice():
         print("Please enter 1, 2, or 3.")
 
 
+def get_trace_choice():
+    print("\nShow every expanded state?")
+    print("Press Enter for no, or type 'y' to show the full trace.")
+    choice = input("Show trace? ").strip().lower()
+    return choice == "y" or choice == "yes"
+
+
 def print_puzzle(puzzle):
     for row in puzzle:
         print(row)
@@ -218,7 +227,7 @@ def is_goal_puzzle(puzzle):
     return puzzle == GOAL_PUZZLE
 
 
-def general_search(initial_state, heuristic_function):
+def general_search(initial_state, heuristic_function, show_trace=False):
     nodes = make_queue(make_initial_node(initial_state, heuristic_function))
     best_g_cost_by_state = {
         puzzle_to_tuple(initial_state): 0,
@@ -237,7 +246,8 @@ def general_search(initial_state, heuristic_function):
         if state_key in explored_states:
             continue
 
-        print_expanded_node(node)
+        if show_trace:
+            print_expanded_node(node)
 
         if is_goal_puzzle(node.state):
             return node, nodes_expanded, max_queue_size
