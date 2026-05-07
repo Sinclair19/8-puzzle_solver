@@ -1,3 +1,7 @@
+import heapq
+from itertools import count
+
+
 PUZZLE_SIZE = 3
 BLANK_TILE = 0
 
@@ -87,19 +91,26 @@ def main():
     puzzle = get_initial_puzzle()
     algorithm_choice = get_algorithm_choice()
     heuristic_function = get_heuristic_function(algorithm_choice)
-    initial_node = make_initial_node(puzzle, heuristic_function)
 
     print("\nInitial puzzle:")
-    print_puzzle(initial_node.state)
+    print_puzzle(puzzle)
     print(f"Selected algorithm: {ALGORITHMS[algorithm_choice]}")
-    print(f"Board key for repeated-state checking: {puzzle_to_tuple(initial_node.state)}")
-    print_node_costs(initial_node)
 
-    print("\nPossible moves from this puzzle:")
-    for child_node in expand_node(initial_node, heuristic_function):
-        print(f"\nMove blank {child_node.move}:")
-        print_puzzle(child_node.state)
-        print_node_costs(child_node)
+    solution_node, nodes_expanded, max_queue_size = general_search(
+        puzzle,
+        heuristic_function,
+    )
+
+    if solution_node is None:
+        print("\nNo solution was found.")
+        print(f"Number of nodes expanded: {nodes_expanded}")
+        print(f"Max queue size: {max_queue_size}")
+        return
+
+    print("\nGoal state found!")
+    print(f"Solution depth was {solution_node.g_cost}")
+    print(f"Number of nodes expanded: {nodes_expanded}")
+    print(f"Max queue size: {max_queue_size}")
 
 
 def get_initial_puzzle():
@@ -204,6 +215,75 @@ def puzzle_to_tuple(puzzle):
 
 def is_goal_puzzle(puzzle):
     return puzzle == GOAL_PUZZLE
+
+
+def general_search(initial_state, heuristic_function):
+    nodes = make_queue(make_initial_node(initial_state, heuristic_function))
+    best_g_cost_by_state = {
+        puzzle_to_tuple(initial_state): 0,
+    }
+    explored_states = set()
+    nodes_expanded = 0
+    max_queue_size = len(nodes["heap"])
+
+    while True:
+        if is_queue_empty(nodes):
+            return None, nodes_expanded, max_queue_size
+
+        node = remove_front(nodes)
+        state_key = puzzle_to_tuple(node.state)
+
+        if state_key in explored_states:
+            continue
+
+        if is_goal_puzzle(node.state):
+            return node, nodes_expanded, max_queue_size
+
+        explored_states.add(state_key)
+        nodes_expanded += 1
+        child_nodes = expand_node(node, heuristic_function)
+        queueing_function(nodes, child_nodes, best_g_cost_by_state, explored_states)
+        max_queue_size = max(max_queue_size, len(nodes["heap"]))
+
+
+def make_queue(initial_node):
+    nodes = {
+        "heap": [],
+        "tie_breaker": count(),
+    }
+    add_node_to_queue(nodes, initial_node)
+    return nodes
+
+
+def is_queue_empty(nodes):
+    return len(nodes["heap"]) == 0
+
+
+def add_node_to_queue(nodes, node):
+    heapq.heappush(
+        nodes["heap"],
+        (node.f_cost(), node.g_cost, next(nodes["tie_breaker"]), node),
+    )
+
+
+def remove_front(nodes):
+    priority, g_cost, tie_breaker, node = heapq.heappop(nodes["heap"])
+    return node
+
+
+def queueing_function(nodes, child_nodes, best_g_cost_by_state, explored_states):
+    for child_node in child_nodes:
+        child_key = puzzle_to_tuple(child_node.state)
+
+        if child_key in explored_states:
+            continue
+
+        best_known_g_cost = best_g_cost_by_state.get(child_key)
+        if best_known_g_cost is not None and best_known_g_cost <= child_node.g_cost:
+            continue
+
+        best_g_cost_by_state[child_key] = child_node.g_cost
+        add_node_to_queue(nodes, child_node)
 
 
 def make_initial_node(initial_state, heuristic_function):
