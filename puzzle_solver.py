@@ -14,6 +14,12 @@ GOAL_PUZZLE = [
     [7, 8, 0],
 ]
 
+GOAL_POSITIONS = {
+    tile: (row_index, column_index)
+    for row_index, row in enumerate(GOAL_PUZZLE)
+    for column_index, tile in enumerate(row)
+}
+
 DEFAULT_PUZZLES = {
     "1": (
         "Trivial",
@@ -80,7 +86,8 @@ def main():
     print("Welcome to my 8-Puzzle Solver.")
     puzzle = get_initial_puzzle()
     algorithm_choice = get_algorithm_choice()
-    initial_node = make_initial_node(puzzle)
+    heuristic_function = get_heuristic_function(algorithm_choice)
+    initial_node = make_initial_node(puzzle, heuristic_function)
 
     print("\nInitial puzzle:")
     print_puzzle(initial_node.state)
@@ -89,7 +96,7 @@ def main():
     print_node_costs(initial_node)
 
     print("\nPossible moves from this puzzle:")
-    for child_node in expand_node(initial_node):
+    for child_node in expand_node(initial_node, heuristic_function):
         print(f"\nMove blank {child_node.move}:")
         print_puzzle(child_node.state)
         print_node_costs(child_node)
@@ -199,24 +206,30 @@ def is_goal_puzzle(puzzle):
     return puzzle == GOAL_PUZZLE
 
 
-def make_initial_node(initial_state):
-    return SearchNode(initial_state)
+def make_initial_node(initial_state, heuristic_function):
+    return SearchNode(
+        state=initial_state,
+        h_cost=heuristic_function(initial_state),
+    )
 
 
-def make_child_node(parent_node, move_name, child_state):
+def make_child_node(parent_node, move_name, child_state, heuristic_function):
     return SearchNode(
         state=child_state,
         parent=parent_node,
         move=move_name,
         g_cost=parent_node.g_cost + 1,
+        h_cost=heuristic_function(child_state),
     )
 
 
-def expand_node(node):
+def expand_node(node, heuristic_function):
     child_nodes = []
 
     for move_name, child_state in expand_puzzle(node.state):
-        child_nodes.append(make_child_node(node, move_name, child_state))
+        child_nodes.append(
+            make_child_node(node, move_name, child_state, heuristic_function)
+        )
 
     return child_nodes
 
@@ -227,6 +240,50 @@ def print_node_costs(node):
         f"h(n) = {node.h_cost}, "
         f"f(n) = {node.f_cost()}"
     )
+
+
+def get_heuristic_function(algorithm_choice):
+    if algorithm_choice == "1":
+        return uniform_cost_heuristic
+    if algorithm_choice == "2":
+        return misplaced_tile_heuristic
+    if algorithm_choice == "3":
+        return manhattan_distance_heuristic
+
+    raise ValueError(f"Unknown algorithm choice: {algorithm_choice}")
+
+
+def uniform_cost_heuristic(puzzle):
+    return 0
+
+
+def misplaced_tile_heuristic(puzzle):
+    misplaced_tiles = 0
+
+    for row_index in range(PUZZLE_SIZE):
+        for column_index in range(PUZZLE_SIZE):
+            tile = puzzle[row_index][column_index]
+            if tile != BLANK_TILE and tile != GOAL_PUZZLE[row_index][column_index]:
+                misplaced_tiles += 1
+
+    return misplaced_tiles
+
+
+def manhattan_distance_heuristic(puzzle):
+    total_distance = 0
+
+    for row_index in range(PUZZLE_SIZE):
+        for column_index in range(PUZZLE_SIZE):
+            tile = puzzle[row_index][column_index]
+            if tile == BLANK_TILE:
+                continue
+
+            goal_row, goal_column = GOAL_POSITIONS[tile]
+            row_distance = abs(row_index - goal_row)
+            column_distance = abs(column_index - goal_column)
+            total_distance += row_distance + column_distance
+
+    return total_distance
 
 
 def find_blank_tile(puzzle):
