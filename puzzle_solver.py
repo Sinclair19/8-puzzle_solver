@@ -1,3 +1,17 @@
+"""
+This program follows the general search pseudocode from the assignment:
+
+    nodes = MAKE-QUEUE(MAKE-NODE(problem.INITIAL-STATE))
+    loop:
+        if EMPTY(nodes): return failure
+        node = REMOVE-FRONT(nodes)
+        if GOAL-TEST(node.STATE): return node
+        nodes = QUEUEING-FUNCTION(nodes, EXPAND(node, problem.OPERATORS))
+
+The queue priority is f(n) = g(n) + h(n), so the same search loop can run
+Uniform Cost Search, A* with Misplaced Tile, or A* with Manhattan Distance.
+"""
+
 import heapq
 from itertools import count
 
@@ -83,6 +97,8 @@ ALGORITHMS = {
 
 
 class SearchNode:
+    """One node in the search tree."""
+
     def __init__(self, state, parent=None, move=None, g_cost=0, h_cost=0):
         self.state = copy_puzzle(state)
         self.parent = parent
@@ -97,18 +113,20 @@ class SearchNode:
 def main():
     print("Welcome to my 8-Puzzle Solver.")
     puzzle = get_initial_puzzle()
-    algorithm_choice = get_algorithm_choice()
-    show_trace = get_trace_choice()
-    heuristic_function = get_heuristic_function(algorithm_choice)
 
     print("\nInitial puzzle:")
     print_puzzle(puzzle)
-    print(f"Selected algorithm: {ALGORITHMS[algorithm_choice]}")
 
     if not is_solvable_puzzle(puzzle):
         print("\nThis puzzle is not solvable.")
         print("No search was run.")
         return
+
+    algorithm_choice = get_algorithm_choice()
+    show_trace = get_trace_choice()
+    heuristic_function = get_heuristic_function(algorithm_choice)
+
+    print(f"\nSelected algorithm: {ALGORITHMS[algorithm_choice]}")
 
     solution_node, nodes_expanded, max_queue_size = general_search(
         puzzle,
@@ -130,6 +148,8 @@ def main():
 
 
 def get_initial_puzzle():
+    """Read either a default puzzle or a user-entered puzzle."""
+
     while True:
         print("\nType '1' to use a default puzzle, or '2' to create your own.")
         choice = input("Choice: ").strip()
@@ -143,6 +163,8 @@ def get_initial_puzzle():
 
 
 def get_default_puzzle():
+    """Let the user choose one of the built-in examples."""
+
     print("\nChoose a default puzzle:")
     for key, (name, puzzle) in DEFAULT_PUZZLES.items():
         print(f"{key}. {name}")
@@ -159,6 +181,8 @@ def get_default_puzzle():
 
 
 def get_custom_puzzle():
+    """Read a valid and solvable 3x3 puzzle from the keyboard."""
+
     print("\nEnter your puzzle, using 0 to represent the blank.")
     print("Enter each row as three numbers separated by spaces.")
 
@@ -181,6 +205,8 @@ def get_custom_puzzle():
 
 
 def read_puzzle_row(row_name):
+    """Read one row such as '1 2 3' and convert it to integers."""
+
     while True:
         raw_row = input(f"Enter the {row_name} row: ").strip()
         pieces = raw_row.split()
@@ -196,12 +222,16 @@ def read_puzzle_row(row_name):
 
 
 def is_valid_puzzle(puzzle):
+    """Check that every tile from 0 through 8 appears exactly once."""
+
     tiles = flatten_puzzle(puzzle)
     expected_tiles = list(range(PUZZLE_SIZE * PUZZLE_SIZE))
     return sorted(tiles) == expected_tiles
 
 
 def get_algorithm_choice():
+    """Ask which queue priority/heuristic should drive the search."""
+
     print("\nSelect algorithm:")
     for key, name in ALGORITHMS.items():
         print(f"{key}. {name}")
@@ -215,6 +245,8 @@ def get_algorithm_choice():
 
 
 def get_trace_choice():
+    """Ask whether to print every node removed from the queue."""
+
     print("\nShow every expanded state?")
     print("Press Enter for no, or type 'y' to show the full trace.")
     choice = input("Show trace? ").strip().lower()
@@ -227,6 +259,8 @@ def print_puzzle(puzzle):
 
 
 def copy_puzzle(puzzle):
+    """Copy the nested list so child states do not modify their parents."""
+
     return [row[:] for row in puzzle]
 
 
@@ -238,6 +272,8 @@ def flatten_puzzle(puzzle):
 
 
 def puzzle_to_tuple(puzzle):
+    """Convert a board into a hashable key for dictionaries and sets."""
+
     return tuple(flatten_puzzle(puzzle))
 
 
@@ -246,6 +282,8 @@ def is_goal_puzzle(puzzle):
 
 
 def count_inversions(puzzle):
+    """Count pairs of tiles that are in the wrong relative order."""
+
     tiles = [tile for tile in flatten_puzzle(puzzle) if tile != BLANK_TILE]
     inversions = 0
 
@@ -258,6 +296,8 @@ def count_inversions(puzzle):
 
 
 def is_solvable_puzzle(puzzle):
+    """Return True if the puzzle has a legal path to the goal state."""
+
     inversions = count_inversions(puzzle)
 
     if PUZZLE_SIZE % 2 == 1:
@@ -273,6 +313,8 @@ def is_solvable_puzzle(puzzle):
 
 
 def general_search(initial_state, heuristic_function, show_trace=False):
+    """Run the assignment's general-search loop with a heap-based queue."""
+
     if not is_solvable_puzzle(initial_state):
         return None, 0, 0
 
@@ -285,9 +327,11 @@ def general_search(initial_state, heuristic_function, show_trace=False):
     max_queue_size = len(nodes["heap"])
 
     while True:
+        # Pseudocode: if EMPTY(nodes) then return "failure".
         if is_queue_empty(nodes):
             return None, nodes_expanded, max_queue_size
 
+        # Pseudocode: node = REMOVE-FRONT(nodes).
         node = remove_front(nodes)
         state_key = puzzle_to_tuple(node.state)
 
@@ -297,17 +341,22 @@ def general_search(initial_state, heuristic_function, show_trace=False):
         if show_trace:
             print_expanded_node(node)
 
+        # Pseudocode: if problem.GOAL-TEST(node.STATE) succeeds then return node.
         if is_goal_puzzle(node.state):
             return node, nodes_expanded, max_queue_size
 
         explored_states.add(state_key)
         nodes_expanded += 1
+
+        # Pseudocode: nodes = QUEUEING-FUNCTION(nodes, EXPAND(...)).
         child_nodes = expand_node(node, heuristic_function)
         queueing_function(nodes, child_nodes, best_g_cost_by_state, explored_states)
         max_queue_size = max(max_queue_size, len(nodes["heap"]))
 
 
 def make_queue(initial_node):
+    """Create the frontier queue and insert the starting node."""
+
     nodes = {
         "heap": [],
         "tie_breaker": count(),
@@ -321,6 +370,8 @@ def is_queue_empty(nodes):
 
 
 def add_node_to_queue(nodes, node):
+    """Insert a node ordered by f(n), with a counter to break exact ties."""
+
     heapq.heappush(
         nodes["heap"],
         (node.f_cost(), node.g_cost, next(nodes["tie_breaker"]), node),
@@ -328,11 +379,13 @@ def add_node_to_queue(nodes, node):
 
 
 def remove_front(nodes):
-    priority, g_cost, tie_breaker, node = heapq.heappop(nodes["heap"])
+    _, _, _, node = heapq.heappop(nodes["heap"])
     return node
 
 
 def queueing_function(nodes, child_nodes, best_g_cost_by_state, explored_states):
+    """Add useful child nodes to the queue and skip repeated states."""
+
     for child_node in child_nodes:
         child_key = puzzle_to_tuple(child_node.state)
 
@@ -348,6 +401,8 @@ def queueing_function(nodes, child_nodes, best_g_cost_by_state, explored_states)
 
 
 def make_initial_node(initial_state, heuristic_function):
+    """MAKE-NODE(problem.INITIAL-STATE)."""
+
     return SearchNode(
         state=initial_state,
         h_cost=heuristic_function(initial_state),
@@ -355,6 +410,8 @@ def make_initial_node(initial_state, heuristic_function):
 
 
 def make_child_node(parent_node, move_name, child_state, heuristic_function):
+    """Create a child node with cost one greater than its parent."""
+
     return SearchNode(
         state=child_state,
         parent=parent_node,
@@ -365,6 +422,8 @@ def make_child_node(parent_node, move_name, child_state, heuristic_function):
 
 
 def expand_node(node, heuristic_function):
+    """Convert board-level moves into search-tree child nodes."""
+
     child_nodes = []
 
     for move_name, child_state in expand_puzzle(node.state):
@@ -373,14 +432,6 @@ def expand_node(node, heuristic_function):
         )
 
     return child_nodes
-
-
-def print_node_costs(node):
-    print(
-        f"g(n) = {node.g_cost}, "
-        f"h(n) = {node.h_cost}, "
-        f"f(n) = {node.f_cost()}"
-    )
 
 
 def print_expanded_node(node):
@@ -392,6 +443,8 @@ def print_expanded_node(node):
 
 
 def get_solution_path(solution_node):
+    """Follow parent pointers from the goal node back to the start."""
+
     path = []
     current_node = solution_node
 
@@ -417,6 +470,8 @@ def print_solution_path(solution_node):
 
 
 def get_heuristic_function(algorithm_choice):
+    """Map the menu choice to the function that computes h(n)."""
+
     if algorithm_choice == "1":
         return uniform_cost_heuristic
     if algorithm_choice == "2":
@@ -428,10 +483,14 @@ def get_heuristic_function(algorithm_choice):
 
 
 def uniform_cost_heuristic(puzzle):
+    """Uniform Cost Search is A* with h(n) hardcoded to 0."""
+
     return 0
 
 
 def misplaced_tile_heuristic(puzzle):
+    """Count numbered tiles that are not in their goal positions."""
+
     misplaced_tiles = 0
 
     for row_index in range(PUZZLE_SIZE):
@@ -444,6 +503,8 @@ def misplaced_tile_heuristic(puzzle):
 
 
 def manhattan_distance_heuristic(puzzle):
+    """Sum each numbered tile's row distance plus column distance."""
+
     total_distance = 0
 
     for row_index in range(PUZZLE_SIZE):
@@ -461,6 +522,8 @@ def manhattan_distance_heuristic(puzzle):
 
 
 def find_blank_tile(puzzle):
+    """Return the row and column where the blank tile is located."""
+
     for row_index in range(PUZZLE_SIZE):
         for column_index in range(PUZZLE_SIZE):
             if puzzle[row_index][column_index] == BLANK_TILE:
@@ -470,6 +533,8 @@ def find_blank_tile(puzzle):
 
 
 def is_inside_puzzle(row_index, column_index):
+    """Check whether a row and column are inside the square board."""
+
     return (
         0 <= row_index < PUZZLE_SIZE
         and 0 <= column_index < PUZZLE_SIZE
@@ -477,6 +542,8 @@ def is_inside_puzzle(row_index, column_index):
 
 
 def move_blank_tile(puzzle, row_change, column_change):
+    """Return a new board after moving the blank, or None if illegal."""
+
     blank_row, blank_column = find_blank_tile(puzzle)
     new_blank_row = blank_row + row_change
     new_blank_column = blank_column + column_change
@@ -491,6 +558,8 @@ def move_blank_tile(puzzle, row_change, column_change):
 
 
 def expand_puzzle(puzzle):
+    """Generate all legal board states reachable in one blank-tile move."""
+
     children = []
 
     for move_name, row_change, column_change in OPERATORS:
