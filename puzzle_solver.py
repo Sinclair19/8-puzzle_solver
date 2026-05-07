@@ -1,6 +1,13 @@
 PUZZLE_SIZE = 3
 BLANK_TILE = 0
 
+OPERATORS = [
+    ("Up", -1, 0),
+    ("Down", 1, 0),
+    ("Left", 0, -1),
+    ("Right", 0, 1),
+]
+
 GOAL_PUZZLE = [
     [1, 2, 3],
     [4, 5, 6],
@@ -66,6 +73,11 @@ def main():
     print_puzzle(puzzle)
     print(f"Selected algorithm: {ALGORITHMS[algorithm_choice]}")
     print(f"Board key for repeated-state checking: {puzzle_to_tuple(puzzle)}")
+
+    print("\nPossible moves from this puzzle:")
+    for move_name, child_puzzle in expand_puzzle(puzzle):
+        print(f"\nMove blank {move_name}:")
+        print_puzzle(child_puzzle)
 
 
 def get_initial_puzzle():
@@ -170,6 +182,47 @@ def puzzle_to_tuple(puzzle):
 
 def is_goal_puzzle(puzzle):
     return puzzle == GOAL_PUZZLE
+
+
+def find_blank_tile(puzzle):
+    for row_index in range(PUZZLE_SIZE):
+        for column_index in range(PUZZLE_SIZE):
+            if puzzle[row_index][column_index] == BLANK_TILE:
+                return row_index, column_index
+
+    raise ValueError("Puzzle does not contain a blank tile.")
+
+
+def is_inside_puzzle(row_index, column_index):
+    return (
+        0 <= row_index < PUZZLE_SIZE
+        and 0 <= column_index < PUZZLE_SIZE
+    )
+
+
+def move_blank_tile(puzzle, row_change, column_change):
+    blank_row, blank_column = find_blank_tile(puzzle)
+    new_blank_row = blank_row + row_change
+    new_blank_column = blank_column + column_change
+
+    if not is_inside_puzzle(new_blank_row, new_blank_column):
+        return None
+
+    new_puzzle = copy_puzzle(puzzle)
+    new_puzzle[blank_row][blank_column] = new_puzzle[new_blank_row][new_blank_column]
+    new_puzzle[new_blank_row][new_blank_column] = BLANK_TILE
+    return new_puzzle
+
+
+def expand_puzzle(puzzle):
+    children = []
+
+    for move_name, row_change, column_change in OPERATORS:
+        child_puzzle = move_blank_tile(puzzle, row_change, column_change)
+        if child_puzzle is not None:
+            children.append((move_name, child_puzzle))
+
+    return children
 
 
 if __name__ == "__main__":
