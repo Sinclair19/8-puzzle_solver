@@ -1,6 +1,12 @@
 PUZZLE_SIZE = 3
 BLANK_TILE = 0
 
+GOAL_PUZZLE = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 0],
+]
+
 DEFAULT_PUZZLES = {
     "1": (
         "Trivial",
@@ -59,6 +65,7 @@ def main():
     print("\nInitial puzzle:")
     print_puzzle(puzzle)
     print(f"Selected algorithm: {ALGORITHMS[algorithm_choice]}")
+    print(f"Board key for repeated-state checking: {puzzle_to_tuple(puzzle)}")
 
 
 def get_initial_puzzle():
@@ -123,10 +130,7 @@ def read_puzzle_row(row_name):
 
 
 def is_valid_puzzle(puzzle):
-    tiles = []
-    for row in puzzle:
-        tiles.extend(row)
-
+    tiles = flatten_puzzle(puzzle)
     expected_tiles = list(range(PUZZLE_SIZE * PUZZLE_SIZE))
     return sorted(tiles) == expected_tiles
 
@@ -151,6 +155,21 @@ def print_puzzle(puzzle):
 
 def copy_puzzle(puzzle):
     return [row[:] for row in puzzle]
+
+
+def flatten_puzzle(puzzle):
+    tiles = []
+    for row in puzzle:
+        tiles.extend(row)
+    return tiles
+
+
+def puzzle_to_tuple(puzzle):
+    return tuple(flatten_puzzle(puzzle))
+
+
+def is_goal_puzzle(puzzle):
+    return puzzle == GOAL_PUZZLE
 
 
 if __name__ == "__main__":
