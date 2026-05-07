@@ -65,6 +65,14 @@ DEFAULT_PUZZLES = {
             [5, 4, 3],
         ],
     ),
+    "6": (
+        "Unsolvable",
+        [
+            [1, 2, 3],
+            [4, 5, 6],
+            [8, 7, 0],
+        ],
+    ),
 }
 
 ALGORITHMS = {
@@ -96,6 +104,11 @@ def main():
     print("\nInitial puzzle:")
     print_puzzle(puzzle)
     print(f"Selected algorithm: {ALGORITHMS[algorithm_choice]}")
+
+    if not is_solvable_puzzle(puzzle):
+        print("\nThis puzzle is not solvable.")
+        print("No search was run.")
+        return
 
     solution_node, nodes_expanded, max_queue_size = general_search(
         puzzle,
@@ -156,6 +169,11 @@ def get_custom_puzzle():
         puzzle.append(read_puzzle_row("third"))
 
         if is_valid_puzzle(puzzle):
+            if not is_solvable_puzzle(puzzle):
+                print("\nThis puzzle is not solvable.")
+                print("Please enter a different puzzle.")
+                continue
+
             return puzzle
 
         print("\nInvalid puzzle. Use each number from 0 through 8 exactly once.")
@@ -227,7 +245,37 @@ def is_goal_puzzle(puzzle):
     return puzzle == GOAL_PUZZLE
 
 
+def count_inversions(puzzle):
+    tiles = [tile for tile in flatten_puzzle(puzzle) if tile != BLANK_TILE]
+    inversions = 0
+
+    for left_index in range(len(tiles)):
+        for right_index in range(left_index + 1, len(tiles)):
+            if tiles[left_index] > tiles[right_index]:
+                inversions += 1
+
+    return inversions
+
+
+def is_solvable_puzzle(puzzle):
+    inversions = count_inversions(puzzle)
+
+    if PUZZLE_SIZE % 2 == 1:
+        return inversions % 2 == 0
+
+    blank_row, _ = find_blank_tile(puzzle)
+    blank_row_from_bottom = PUZZLE_SIZE - blank_row
+
+    if blank_row_from_bottom % 2 == 0:
+        return inversions % 2 == 1
+
+    return inversions % 2 == 0
+
+
 def general_search(initial_state, heuristic_function, show_trace=False):
+    if not is_solvable_puzzle(initial_state):
+        return None, 0, 0
+
     nodes = make_queue(make_initial_node(initial_state, heuristic_function))
     best_g_cost_by_state = {
         puzzle_to_tuple(initial_state): 0,
