@@ -64,20 +64,35 @@ ALGORITHMS = {
 }
 
 
+class SearchNode:
+    def __init__(self, state, parent=None, move=None, g_cost=0, h_cost=0):
+        self.state = copy_puzzle(state)
+        self.parent = parent
+        self.move = move
+        self.g_cost = g_cost
+        self.h_cost = h_cost
+
+    def f_cost(self):
+        return self.g_cost + self.h_cost
+
+
 def main():
     print("Welcome to my 8-Puzzle Solver.")
     puzzle = get_initial_puzzle()
     algorithm_choice = get_algorithm_choice()
+    initial_node = make_initial_node(puzzle)
 
     print("\nInitial puzzle:")
-    print_puzzle(puzzle)
+    print_puzzle(initial_node.state)
     print(f"Selected algorithm: {ALGORITHMS[algorithm_choice]}")
-    print(f"Board key for repeated-state checking: {puzzle_to_tuple(puzzle)}")
+    print(f"Board key for repeated-state checking: {puzzle_to_tuple(initial_node.state)}")
+    print_node_costs(initial_node)
 
     print("\nPossible moves from this puzzle:")
-    for move_name, child_puzzle in expand_puzzle(puzzle):
-        print(f"\nMove blank {move_name}:")
-        print_puzzle(child_puzzle)
+    for child_node in expand_node(initial_node):
+        print(f"\nMove blank {child_node.move}:")
+        print_puzzle(child_node.state)
+        print_node_costs(child_node)
 
 
 def get_initial_puzzle():
@@ -182,6 +197,36 @@ def puzzle_to_tuple(puzzle):
 
 def is_goal_puzzle(puzzle):
     return puzzle == GOAL_PUZZLE
+
+
+def make_initial_node(initial_state):
+    return SearchNode(initial_state)
+
+
+def make_child_node(parent_node, move_name, child_state):
+    return SearchNode(
+        state=child_state,
+        parent=parent_node,
+        move=move_name,
+        g_cost=parent_node.g_cost + 1,
+    )
+
+
+def expand_node(node):
+    child_nodes = []
+
+    for move_name, child_state in expand_puzzle(node.state):
+        child_nodes.append(make_child_node(node, move_name, child_state))
+
+    return child_nodes
+
+
+def print_node_costs(node):
+    print(
+        f"g(n) = {node.g_cost}, "
+        f"h(n) = {node.h_cost}, "
+        f"f(n) = {node.f_cost()}"
+    )
 
 
 def find_blank_tile(puzzle):
