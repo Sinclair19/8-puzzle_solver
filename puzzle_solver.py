@@ -16,7 +16,7 @@ import heapq
 from itertools import count
 
 
-PUZZLE_SIZE = 3
+PUZZLE_SIZE = 3 # Change this to 4 for the 15-puzzle.
 BLANK_TILE = 0
 
 OPERATORS = [
@@ -27,9 +27,12 @@ OPERATORS = [
 ]
 
 GOAL_PUZZLE = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 0],
+    [
+        (row_index * PUZZLE_SIZE + column_index + 1)
+        % (PUZZLE_SIZE * PUZZLE_SIZE)
+        for column_index in range(PUZZLE_SIZE)
+    ]
+    for row_index in range(PUZZLE_SIZE)
 ]
 
 GOAL_POSITIONS = {
@@ -111,7 +114,7 @@ class SearchNode:
 
 
 def main():
-    print("Welcome to my 8-Puzzle Solver.")
+    print(f"Welcome to my {PUZZLE_SIZE * PUZZLE_SIZE - 1}-Puzzle Solver.")
     puzzle = get_initial_puzzle()
 
     print("\nInitial puzzle:")
@@ -165,7 +168,7 @@ def get_initial_puzzle():
 def get_default_puzzle():
     """Let the user choose one of the built-in examples."""
 
-    print("\nChoose a default puzzle:")
+    print(f"\nChoose a default {PUZZLE_SIZE * PUZZLE_SIZE - 1}-puzzle:")
     for key, (name, puzzle) in DEFAULT_PUZZLES.items():
         print(f"{key}. {name}")
         print_puzzle(puzzle)
@@ -181,16 +184,16 @@ def get_default_puzzle():
 
 
 def get_custom_puzzle():
-    """Read a valid and solvable 3x3 puzzle from the keyboard."""
+    """Read a valid and solvable square puzzle from the keyboard."""
 
     print("\nEnter your puzzle, using 0 to represent the blank.")
-    print("Enter each row as three numbers separated by spaces.")
+    print(f"Enter each row as {PUZZLE_SIZE} numbers separated by spaces.")
 
     while True:
         puzzle = []
-        puzzle.append(read_puzzle_row("first"))
-        puzzle.append(read_puzzle_row("second"))
-        puzzle.append(read_puzzle_row("third"))
+
+        for row_index in range(PUZZLE_SIZE):
+            puzzle.append(read_puzzle_row(row_index + 1))
 
         if is_valid_puzzle(puzzle):
             if not is_solvable_puzzle(puzzle):
@@ -204,15 +207,15 @@ def get_custom_puzzle():
         print("Please enter the whole puzzle again.")
 
 
-def read_puzzle_row(row_name):
+def read_puzzle_row(row_number):
     """Read one row such as '1 2 3' and convert it to integers."""
 
     while True:
-        raw_row = input(f"Enter the {row_name} row: ").strip()
+        raw_row = input(f"Enter row {row_number}: ").strip()
         pieces = raw_row.split()
 
         if len(pieces) != PUZZLE_SIZE:
-            print("Each row must contain exactly three numbers.")
+            print(f"Each row must contain exactly {PUZZLE_SIZE} numbers.")
             continue
 
         try:
@@ -222,7 +225,7 @@ def read_puzzle_row(row_name):
 
 
 def is_valid_puzzle(puzzle):
-    """Check that every tile from 0 through 8 appears exactly once."""
+    """Check that every tile appears exactly once."""
 
     tiles = flatten_puzzle(puzzle)
     expected_tiles = list(range(PUZZLE_SIZE * PUZZLE_SIZE))
