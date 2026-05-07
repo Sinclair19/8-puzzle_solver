@@ -107,10 +107,11 @@ def main():
         print(f"Max queue size: {max_queue_size}")
         return
 
-    print("\nGoal state found!")
+    print("\nGoal state!")
     print(f"Solution depth was {solution_node.g_cost}")
     print(f"Number of nodes expanded: {nodes_expanded}")
     print(f"Max queue size: {max_queue_size}")
+    print_solution_path(solution_node)
 
 
 def get_initial_puzzle():
@@ -236,6 +237,8 @@ def general_search(initial_state, heuristic_function):
         if state_key in explored_states:
             continue
 
+        print_expanded_node(node)
+
         if is_goal_puzzle(node.state):
             return node, nodes_expanded, max_queue_size
 
@@ -320,6 +323,39 @@ def print_node_costs(node):
         f"h(n) = {node.h_cost}, "
         f"f(n) = {node.f_cost()}"
     )
+
+
+def print_expanded_node(node):
+    print(
+        "\nThe best state to expand with "
+        f"g(n) = {node.g_cost} and h(n) = {node.h_cost} is:"
+    )
+    print_puzzle(node.state)
+
+
+def get_solution_path(solution_node):
+    path = []
+    current_node = solution_node
+
+    while current_node is not None:
+        path.append(current_node)
+        current_node = current_node.parent
+
+    path.reverse()
+    return path
+
+
+def print_solution_path(solution_node):
+    path = get_solution_path(solution_node)
+
+    print("\nSolution path:")
+    for index, node in enumerate(path):
+        if node.move is None:
+            print(f"\nStep {index}: initial state")
+        else:
+            print(f"\nStep {index}: move blank {node.move}")
+
+        print_puzzle(node.state)
 
 
 def get_heuristic_function(algorithm_choice):
