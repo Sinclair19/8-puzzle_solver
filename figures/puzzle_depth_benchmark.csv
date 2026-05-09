@@ -1,0 +1,97 @@
+puzzle,board,target_depth,algorithm,solution_depth,nodes_expanded,max_queue_size
+Generated depth 0,1 2 3 / 4 5 6 / 7 8 0,0,Uniform Cost Search,0,0,1
+Generated depth 0,1 2 3 / 4 5 6 / 7 8 0,0,A* with the Misplaced Tile heuristic,0,0,1
+Generated depth 0,1 2 3 / 4 5 6 / 7 8 0,0,A* with the Manhattan Distance heuristic,0,0,1
+Generated depth 1,1 2 3 / 4 5 0 / 7 8 6,1,Uniform Cost Search,1,2,3
+Generated depth 1,1 2 3 / 4 5 0 / 7 8 6,1,A* with the Misplaced Tile heuristic,1,1,3
+Generated depth 1,1 2 3 / 4 5 0 / 7 8 6,1,A* with the Manhattan Distance heuristic,1,1,3
+Generated depth 2,1 2 0 / 4 5 3 / 7 8 6,2,Uniform Cost Search,2,3,4
+Generated depth 2,1 2 0 / 4 5 3 / 7 8 6,2,A* with the Misplaced Tile heuristic,2,2,3
+Generated depth 2,1 2 0 / 4 5 3 / 7 8 6,2,A* with the Manhattan Distance heuristic,2,2,3
+Generated depth 3,1 0 2 / 4 5 3 / 7 8 6,3,Uniform Cost Search,3,17,12
+Generated depth 3,1 0 2 / 4 5 3 / 7 8 6,3,A* with the Misplaced Tile heuristic,3,3,4
+Generated depth 3,1 0 2 / 4 5 3 / 7 8 6,3,A* with the Manhattan Distance heuristic,3,3,4
+Generated depth 4,1 5 2 / 4 0 3 / 7 8 6,4,Uniform Cost Search,4,23,18
+Generated depth 4,1 5 2 / 4 0 3 / 7 8 6,4,A* with the Misplaced Tile heuristic,4,4,6
+Generated depth 4,1 5 2 / 4 0 3 / 7 8 6,4,A* with the Manhattan Distance heuristic,4,4,6
+Generated depth 5,1 5 2 / 4 8 3 / 7 0 6,5,Uniform Cost Search,5,35,30
+Generated depth 5,1 5 2 / 4 8 3 / 7 0 6,5,A* with the Misplaced Tile heuristic,5,5,7
+Generated depth 5,1 5 2 / 4 8 3 / 7 0 6,5,A* with the Manhattan Distance heuristic,5,5,7
+Generated depth 6,1 5 2 / 4 8 3 / 0 7 6,6,Uniform Cost Search,6,73,53
+Generated depth 6,1 5 2 / 4 8 3 / 0 7 6,6,A* with the Misplaced Tile heuristic,6,6,7
+Generated depth 6,1 5 2 / 4 8 3 / 0 7 6,6,A* with the Manhattan Distance heuristic,6,6,7
+Generated depth 7,1 5 2 / 0 8 3 / 4 7 6,7,Uniform Cost Search,7,124,93
+Generated depth 7,1 5 2 / 0 8 3 / 4 7 6,7,A* with the Misplaced Tile heuristic,7,7,8
+Generated depth 7,1 5 2 / 0 8 3 / 4 7 6,7,A* with the Manhattan Distance heuristic,7,7,8
+Generated depth 8,0 5 2 / 1 8 3 / 4 7 6,8,Uniform Cost Search,8,154,118
+Generated depth 8,0 5 2 / 1 8 3 / 4 7 6,8,A* with the Misplaced Tile heuristic,8,8,8
+Generated depth 8,0 5 2 / 1 8 3 / 4 7 6,8,A* with the Manhattan Distance heuristic,8,8,8
+Generated depth 9,5 0 2 / 1 8 3 / 4 7 6,9,Uniform Cost Search,9,393,250
+Generated depth 9,5 0 2 / 1 8 3 / 4 7 6,9,A* with the Misplaced Tile heuristic,9,16,17
+Generated depth 9,5 0 2 / 1 8 3 / 4 7 6,9,A* with the Manhattan Distance heuristic,9,12,10
+Generated depth 10,5 8 2 / 1 0 3 / 4 7 6,10,Uniform Cost Search,10,539,378
+Generated depth 10,5 8 2 / 1 0 3 / 4 7 6,10,A* with the Misplaced Tile heuristic,10,29,24
+Generated depth 10,5 8 2 / 1 0 3 / 4 7 6,10,A* with the Manhattan Distance heuristic,10,13,12
+Generated depth 11,5 8 2 / 1 7 3 / 4 0 6,11,Uniform Cost Search,11,773,526
+Generated depth 11,5 8 2 / 1 7 3 / 4 0 6,11,A* with the Misplaced Tile heuristic,11,35,30
+Generated depth 11,5 8 2 / 1 7 3 / 4 0 6,11,A* with the Manhattan Distance heuristic,11,14,13
+Generated depth 12,5 8 2 / 1 7 3 / 0 4 6,12,Uniform Cost Search,12,1489,899
+Generated depth 12,5 8 2 / 1 7 3 / 0 4 6,12,A* with the Misplaced Tile heuristic,12,60,48
+Generated depth 12,5 8 2 / 1 7 3 / 0 4 6,12,A* with the Manhattan Distance heuristic,12,15,13
+Generated depth 13,5 8 2 / 0 7 3 / 1 4 6,13,Uniform Cost Search,13,2386,1477
+Generated depth 13,5 8 2 / 0 7 3 / 1 4 6,13,A* with the Misplaced Tile heuristic,13,139,94
+Generated depth 13,5 8 2 / 0 7 3 / 1 4 6,13,A* with the Manhattan Distance heuristic,13,24,19
+Generated depth 14,0 8 2 / 5 7 3 / 1 4 6,14,Uniform Cost Search,14,2876,1895
+Generated depth 14,0 8 2 / 5 7 3 / 1 4 6,14,A* with the Misplaced Tile heuristic,14,195,136
+Generated depth 14,0 8 2 / 5 7 3 / 1 4 6,14,A* with the Manhattan Distance heuristic,14,28,21
+Generated depth 15,8 0 2 / 5 7 3 / 1 4 6,15,Uniform Cost Search,15,6908,3782
+Generated depth 15,8 0 2 / 5 7 3 / 1 4 6,15,A* with the Misplaced Tile heuristic,15,347,216
+Generated depth 15,8 0 2 / 5 7 3 / 1 4 6,15,A* with the Manhattan Distance heuristic,15,51,38
+Generated depth 16,8 7 2 / 5 0 3 / 1 4 6,16,Uniform Cost Search,16,9138,5482
+Generated depth 16,8 7 2 / 5 0 3 / 1 4 6,16,A* with the Misplaced Tile heuristic,16,614,379
+Generated depth 16,8 7 2 / 5 0 3 / 1 4 6,16,A* with the Manhattan Distance heuristic,16,88,61
+Generated depth 17,8 7 2 / 5 4 3 / 1 0 6,17,Uniform Cost Search,17,12649,7322
+Generated depth 17,8 7 2 / 5 4 3 / 1 0 6,17,A* with the Misplaced Tile heuristic,17,855,513
+Generated depth 17,8 7 2 / 5 4 3 / 1 0 6,17,A* with the Manhattan Distance heuristic,17,103,69
+Generated depth 18,8 7 2 / 5 4 3 / 0 1 6,18,Uniform Cost Search,18,17402,9529
+Generated depth 18,8 7 2 / 5 4 3 / 0 1 6,18,A* with the Misplaced Tile heuristic,18,1245,746
+Generated depth 18,8 7 2 / 5 4 3 / 0 1 6,18,A* with the Manhattan Distance heuristic,18,208,125
+Generated depth 19,8 7 2 / 5 4 0 / 1 6 3,19,Uniform Cost Search,19,32884,14540
+Generated depth 19,8 7 2 / 5 4 0 / 1 6 3,19,A* with the Misplaced Tile heuristic,19,2004,1208
+Generated depth 19,8 7 2 / 5 4 0 / 1 6 3,19,A* with the Manhattan Distance heuristic,19,145,90
+Generated depth 20,8 7 0 / 5 4 2 / 1 6 3,20,Uniform Cost Search,20,37809,16993
+Generated depth 20,8 7 0 / 5 4 2 / 1 6 3,20,A* with the Misplaced Tile heuristic,20,2805,1680
+Generated depth 20,8 7 0 / 5 4 2 / 1 6 3,20,A* with the Manhattan Distance heuristic,20,179,112
+Generated depth 21,8 0 7 / 5 4 2 / 1 6 3,21,Uniform Cost Search,21,74668,21826
+Generated depth 21,8 0 7 / 5 4 2 / 1 6 3,21,A* with the Misplaced Tile heuristic,21,5045,2863
+Generated depth 21,8 0 7 / 5 4 2 / 1 6 3,21,A* with the Manhattan Distance heuristic,21,282,170
+Generated depth 22,8 4 7 / 5 0 2 / 1 6 3,22,Uniform Cost Search,22,86784,24983
+Generated depth 22,8 4 7 / 5 0 2 / 1 6 3,22,A* with the Misplaced Tile heuristic,22,8882,4897
+Generated depth 22,8 4 7 / 5 0 2 / 1 6 3,22,A* with the Manhattan Distance heuristic,22,521,314
+Generated depth 23,8 4 7 / 5 6 2 / 1 0 3,23,Uniform Cost Search,23,102392,25134
+Generated depth 23,8 4 7 / 5 6 2 / 1 0 3,23,A* with the Misplaced Tile heuristic,23,12224,6512
+Generated depth 23,8 4 7 / 5 6 2 / 1 0 3,23,A* with the Manhattan Distance heuristic,23,653,367
+Generated depth 24,8 4 7 / 5 6 2 / 0 1 3,24,Uniform Cost Search,24,133213,24053
+Generated depth 24,8 4 7 / 5 6 2 / 0 1 3,24,A* with the Misplaced Tile heuristic,24,17000,8615
+Generated depth 24,8 4 7 / 5 6 2 / 0 1 3,24,A* with the Manhattan Distance heuristic,24,945,531
+Generated depth 25,8 4 7 / 0 6 2 / 5 1 3,25,Uniform Cost Search,25,151626,25133
+Generated depth 25,8 4 7 / 0 6 2 / 5 1 3,25,A* with the Misplaced Tile heuristic,25,28197,12792
+Generated depth 25,8 4 7 / 0 6 2 / 5 1 3,25,A* with the Manhattan Distance heuristic,25,1976,1069
+Generated depth 26,0 4 7 / 8 6 2 / 5 1 3,26,Uniform Cost Search,26,156726,24048
+Generated depth 26,0 4 7 / 8 6 2 / 5 1 3,26,A* with the Misplaced Tile heuristic,26,37856,15695
+Generated depth 26,0 4 7 / 8 6 2 / 5 1 3,26,A* with the Manhattan Distance heuristic,26,3618,1874
+Generated depth 27,8 4 7 / 6 2 0 / 5 1 3,27,Uniform Cost Search,27,171708,25136
+Generated depth 27,8 4 7 / 6 2 0 / 5 1 3,27,A* with the Misplaced Tile heuristic,27,56537,20199
+Generated depth 27,8 4 7 / 6 2 0 / 5 1 3,27,A* with the Manhattan Distance heuristic,27,4279,2183
+Generated depth 28,8 4 7 / 6 2 3 / 5 1 0,28,Uniform Cost Search,28,176925,24054
+Generated depth 28,8 4 7 / 6 2 3 / 5 1 0,28,A* with the Misplaced Tile heuristic,28,71009,22329
+Generated depth 28,8 4 7 / 6 2 3 / 5 1 0,28,A* with the Manhattan Distance heuristic,28,5864,2909
+Generated depth 29,8 4 7 / 1 5 6 / 3 0 2,29,Uniform Cost Search,29,180532,25134
+Generated depth 29,8 4 7 / 1 5 6 / 3 0 2,29,A* with the Misplaced Tile heuristic,29,98058,23701
+Generated depth 29,8 4 7 / 1 5 6 / 3 0 2,29,A* with the Manhattan Distance heuristic,29,11577,5274
+Generated depth 30,8 4 7 / 1 5 6 / 3 2 0,30,Uniform Cost Search,30,181339,24054
+Generated depth 30,8 4 7 / 1 5 6 / 3 2 0,30,A* with the Misplaced Tile heuristic,30,115412,24290
+Generated depth 30,8 4 7 / 1 5 6 / 3 2 0,30,A* with the Manhattan Distance heuristic,30,16497,7123
+Generated depth 31,8 6 7 / 2 5 4 / 3 0 1,31,Uniform Cost Search,31,181438,25134
+Generated depth 31,8 6 7 / 2 5 4 / 3 0 1,31,A* with the Misplaced Tile heuristic,31,143848,24995
+Generated depth 31,8 6 7 / 2 5 4 / 3 0 1,31,A* with the Manhattan Distance heuristic,31,21197,8862

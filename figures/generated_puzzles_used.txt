@@ -1,0 +1,162 @@
+Generated 8-puzzle boards used in the benchmark
+Each depth is the exact shortest solution depth from the goal.
+
+Generated depth 0 (target depth 0)
+[1, 2, 3]
+[4, 5, 6]
+[7, 8, 0]
+
+Generated depth 1 (target depth 1)
+[1, 2, 3]
+[4, 5, 0]
+[7, 8, 6]
+
+Generated depth 2 (target depth 2)
+[1, 2, 0]
+[4, 5, 3]
+[7, 8, 6]
+
+Generated depth 3 (target depth 3)
+[1, 0, 2]
+[4, 5, 3]
+[7, 8, 6]
+
+Generated depth 4 (target depth 4)
+[1, 5, 2]
+[4, 0, 3]
+[7, 8, 6]
+
+Generated depth 5 (target depth 5)
+[1, 5, 2]
+[4, 8, 3]
+[7, 0, 6]
+
+Generated depth 6 (target depth 6)
+[1, 5, 2]
+[4, 8, 3]
+[0, 7, 6]
+
+Generated depth 7 (target depth 7)
+[1, 5, 2]
+[0, 8, 3]
+[4, 7, 6]
+
+Generated depth 8 (target depth 8)
+[0, 5, 2]
+[1, 8, 3]
+[4, 7, 6]
+
+Generated depth 9 (target depth 9)
+[5, 0, 2]
+[1, 8, 3]
+[4, 7, 6]
+
+Generated depth 10 (target depth 10)
+[5, 8, 2]
+[1, 0, 3]
+[4, 7, 6]
+
+Generated depth 11 (target depth 11)
+[5, 8, 2]
+[1, 7, 3]
+[4, 0, 6]
+
+Generated depth 12 (target depth 12)
+[5, 8, 2]
+[1, 7, 3]
+[0, 4, 6]
+
+Generated depth 13 (target depth 13)
+[5, 8, 2]
+[0, 7, 3]
+[1, 4, 6]
+
+Generated depth 14 (target depth 14)
+[0, 8, 2]
+[5, 7, 3]
+[1, 4, 6]
+
+Generated depth 15 (target depth 15)
+[8, 0, 2]
+[5, 7, 3]
+[1, 4, 6]
+
+Generated depth 16 (target depth 16)
+[8, 7, 2]
+[5, 0, 3]
+[1, 4, 6]
+
+Generated depth 17 (target depth 17)
+[8, 7, 2]
+[5, 4, 3]
+[1, 0, 6]
+
+Generated depth 18 (target depth 18)
+[8, 7, 2]
+[5, 4, 3]
+[0, 1, 6]
+
+Generated depth 19 (target depth 19)
+[8, 7, 2]
+[5, 4, 0]
+[1, 6, 3]
+
+Generated depth 20 (target depth 20)
+[8, 7, 0]
+[5, 4, 2]
+[1, 6, 3]
+
+Generated depth 21 (target depth 21)
+[8, 0, 7]
+[5, 4, 2]
+[1, 6, 3]
+
+Generated depth 22 (target depth 22)
+[8, 4, 7]
+[5, 0, 2]
+[1, 6, 3]
+
+Generated depth 23 (target depth 23)
+[8, 4, 7]
+[5, 6, 2]
+[1, 0, 3]
+
+Generated depth 24 (target depth 24)
+[8, 4, 7]
+[5, 6, 2]
+[0, 1, 3]
+
+Generated depth 25 (target depth 25)
+[8, 4, 7]
+[0, 6, 2]
+[5, 1, 3]
+
+Generated depth 26 (target depth 26)
+[0, 4, 7]
+[8, 6, 2]
+[5, 1, 3]
+
+Generated depth 27 (target depth 27)
+[8, 4, 7]
+[6, 2, 0]
+[5, 1, 3]
+
+Generated depth 28 (target depth 28)
+[8, 4, 7]
+[6, 2, 3]
+[5, 1, 0]
+
+Generated depth 29 (target depth 29)
+[8, 4, 7]
+[1, 5, 6]
+[3, 0, 2]
+
+Generated depth 30 (target depth 30)
+[8, 4, 7]
+[1, 5, 6]
+[3, 2, 0]
+
+Generated depth 31 (target depth 31)
+[8, 6, 7]
+[2, 5, 4]
+[3, 0, 1]

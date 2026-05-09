@@ -1,0 +1,178 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="560" viewBox="0 0 900 560">
+<style>
+  .title { font: 700 24px Arial, sans-serif; fill: #202124; }
+  .axis-label { font: 600 15px Arial, sans-serif; fill: #333333; }
+  .tick-label { font: 12px Arial, sans-serif; fill: #4d4d4d; }
+  .grid { stroke: #d9dde3; stroke-width: 1; }
+  .max-line { stroke: #6b7280; stroke-width: 1.3; stroke-dasharray: 6 4; }
+  .max-label { font: 12px Arial, sans-serif; fill: #303236; font-weight: 700; }
+  .axis { stroke: #303236; stroke-width: 1.6; }
+  .series { fill: none; stroke-width: 2.8; }
+  .point { stroke: white; stroke-width: 1.8; }
+  .legend-box { fill: #ffffff; stroke: #d9dde3; stroke-width: 1; opacity: 0.94; }
+  .legend { font: 13px Arial, sans-serif; fill: #333333; }
+</style>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="450.0" y="34" class="title" text-anchor="middle">Maximum Queue Size vs Solution Depth</text>
+<text x="450.0" y="536" class="axis-label" text-anchor="middle">Solution depth</text>
+<text x="20" y="268.0" class="axis-label" text-anchor="middle" transform="rotate(-90 20 268.0)">Maximum queue size, log10(value + 1)</text>
+<line x1="92" y1="472.00" x2="866" y2="472.00" class="grid"/>
+<text x="80" y="476.00" class="tick-label" text-anchor="end">0</text>
+<line x1="92" y1="444.09" x2="866" y2="444.09" class="grid"/>
+<text x="80" y="448.09" class="tick-label" text-anchor="end">1</text>
+<line x1="92" y1="375.44" x2="866" y2="375.44" class="grid"/>
+<text x="80" y="379.44" class="tick-label" text-anchor="end">10</text>
+<line x1="92" y1="286.16" x2="866" y2="286.16" class="grid"/>
+<text x="80" y="290.16" class="tick-label" text-anchor="end">100</text>
+<line x1="92" y1="193.80" x2="866" y2="193.80" class="grid"/>
+<text x="80" y="197.80" class="tick-label" text-anchor="end">1,000</text>
+<line x1="92" y1="101.11" x2="866" y2="101.11" class="grid"/>
+<text x="80" y="105.11" class="tick-label" text-anchor="end">10,000</text>
+<line x1="92.00" y1="64" x2="92.00" y2="472" class="grid"/>
+<text x="92.00" y="496" class="tick-label" text-anchor="middle">0</text>
+<line x1="141.94" y1="64" x2="141.94" y2="472" class="grid"/>
+<text x="141.94" y="496" class="tick-label" text-anchor="middle">2</text>
+<line x1="191.87" y1="64" x2="191.87" y2="472" class="grid"/>
+<text x="191.87" y="496" class="tick-label" text-anchor="middle">4</text>
+<line x1="241.81" y1="64" x2="241.81" y2="472" class="grid"/>
+<text x="241.81" y="496" class="tick-label" text-anchor="middle">6</text>
+<line x1="291.74" y1="64" x2="291.74" y2="472" class="grid"/>
+<text x="291.74" y="496" class="tick-label" text-anchor="middle">8</text>
+<line x1="341.68" y1="64" x2="341.68" y2="472" class="grid"/>
+<text x="341.68" y="496" class="tick-label" text-anchor="middle">10</text>
+<line x1="391.61" y1="64" x2="391.61" y2="472" class="grid"/>
+<text x="391.61" y="496" class="tick-label" text-anchor="middle">12</text>
+<line x1="441.55" y1="64" x2="441.55" y2="472" class="grid"/>
+<text x="441.55" y="496" class="tick-label" text-anchor="middle">14</text>
+<line x1="491.48" y1="64" x2="491.48" y2="472" class="grid"/>
+<text x="491.48" y="496" class="tick-label" text-anchor="middle">16</text>
+<line x1="541.42" y1="64" x2="541.42" y2="472" class="grid"/>
+<text x="541.42" y="496" class="tick-label" text-anchor="middle">18</text>
+<line x1="591.35" y1="64" x2="591.35" y2="472" class="grid"/>
+<text x="591.35" y="496" class="tick-label" text-anchor="middle">20</text>
+<line x1="641.29" y1="64" x2="641.29" y2="472" class="grid"/>
+<text x="641.29" y="496" class="tick-label" text-anchor="middle">22</text>
+<line x1="691.23" y1="64" x2="691.23" y2="472" class="grid"/>
+<text x="691.23" y="496" class="tick-label" text-anchor="middle">24</text>
+<line x1="741.16" y1="64" x2="741.16" y2="472" class="grid"/>
+<text x="741.16" y="496" class="tick-label" text-anchor="middle">26</text>
+<line x1="791.10" y1="64" x2="791.10" y2="472" class="grid"/>
+<text x="791.10" y="496" class="tick-label" text-anchor="middle">28</text>
+<line x1="841.03" y1="64" x2="841.03" y2="472" class="grid"/>
+<text x="841.03" y="496" class="tick-label" text-anchor="middle">30</text>
+<line x1="866.00" y1="64" x2="866.00" y2="472" class="grid"/>
+<text x="866.00" y="496" class="tick-label" text-anchor="middle">31</text>
+<line x1="92" y1="472" x2="866" y2="472" class="axis"/>
+<line x1="92" y1="64" x2="92" y2="472" class="axis"/>
+<line x1="92" y1="64.00" x2="866" y2="64.00" class="max-line"/>
+<text x="860" y="57.00" class="max-label" text-anchor="end">max 25,136</text>
+<polyline points="92.00,444.09 116.97,416.18 141.94,407.19 166.90,368.71 191.87,353.43 216.84,333.72 241.81,311.37 266.77,289.05 291.74,279.55 316.71,249.50 341.68,232.91 366.65,219.63 391.61,198.08 416.58,178.11 441.55,168.08 466.52,140.26 491.48,125.32 516.45,113.66 541.42,103.06 566.39,86.04 591.35,79.76 616.32,69.69 641.29,64.25 666.26,64.00 691.23,65.77 716.19,64.00 741.16,65.78 766.13,64.00 791.10,65.77 816.06,64.00 841.03,65.77 866.00,64.00" class="series" stroke="#2f6f9f"/>
+<circle cx="92.00" cy="444.09" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 0: 1 2 3 / 4 5 6 / 7 8 0, depth 0, max queue size 1</title></circle>
+<circle cx="116.97" cy="416.18" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 1: 1 2 3 / 4 5 0 / 7 8 6, depth 1, max queue size 3</title></circle>
+<circle cx="141.94" cy="407.19" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 2: 1 2 0 / 4 5 3 / 7 8 6, depth 2, max queue size 4</title></circle>
+<circle cx="166.90" cy="368.71" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 3: 1 0 2 / 4 5 3 / 7 8 6, depth 3, max queue size 12</title></circle>
+<circle cx="191.87" cy="353.43" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 4: 1 5 2 / 4 0 3 / 7 8 6, depth 4, max queue size 18</title></circle>
+<circle cx="216.84" cy="333.72" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 5: 1 5 2 / 4 8 3 / 7 0 6, depth 5, max queue size 30</title></circle>
+<circle cx="241.81" cy="311.37" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 6: 1 5 2 / 4 8 3 / 0 7 6, depth 6, max queue size 53</title></circle>
+<circle cx="266.77" cy="289.05" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 7: 1 5 2 / 0 8 3 / 4 7 6, depth 7, max queue size 93</title></circle>
+<circle cx="291.74" cy="279.55" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 8: 0 5 2 / 1 8 3 / 4 7 6, depth 8, max queue size 118</title></circle>
+<circle cx="316.71" cy="249.50" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 9: 5 0 2 / 1 8 3 / 4 7 6, depth 9, max queue size 250</title></circle>
+<circle cx="341.68" cy="232.91" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 10: 5 8 2 / 1 0 3 / 4 7 6, depth 10, max queue size 378</title></circle>
+<circle cx="366.65" cy="219.63" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 11: 5 8 2 / 1 7 3 / 4 0 6, depth 11, max queue size 526</title></circle>
+<circle cx="391.61" cy="198.08" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 12: 5 8 2 / 1 7 3 / 0 4 6, depth 12, max queue size 899</title></circle>
+<circle cx="416.58" cy="178.11" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 13: 5 8 2 / 0 7 3 / 1 4 6, depth 13, max queue size 1,477</title></circle>
+<circle cx="441.55" cy="168.08" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 14: 0 8 2 / 5 7 3 / 1 4 6, depth 14, max queue size 1,895</title></circle>
+<circle cx="466.52" cy="140.26" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 15: 8 0 2 / 5 7 3 / 1 4 6, depth 15, max queue size 3,782</title></circle>
+<circle cx="491.48" cy="125.32" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 16: 8 7 2 / 5 0 3 / 1 4 6, depth 16, max queue size 5,482</title></circle>
+<circle cx="516.45" cy="113.66" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 17: 8 7 2 / 5 4 3 / 1 0 6, depth 17, max queue size 7,322</title></circle>
+<circle cx="541.42" cy="103.06" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 18: 8 7 2 / 5 4 3 / 0 1 6, depth 18, max queue size 9,529</title></circle>
+<circle cx="566.39" cy="86.04" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 19: 8 7 2 / 5 4 0 / 1 6 3, depth 19, max queue size 14,540</title></circle>
+<circle cx="591.35" cy="79.76" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 20: 8 7 0 / 5 4 2 / 1 6 3, depth 20, max queue size 16,993</title></circle>
+<circle cx="616.32" cy="69.69" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 21: 8 0 7 / 5 4 2 / 1 6 3, depth 21, max queue size 21,826</title></circle>
+<circle cx="641.29" cy="64.25" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 22: 8 4 7 / 5 0 2 / 1 6 3, depth 22, max queue size 24,983</title></circle>
+<circle cx="666.26" cy="64.00" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 23: 8 4 7 / 5 6 2 / 1 0 3, depth 23, max queue size 25,134</title></circle>
+<circle cx="691.23" cy="65.77" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 24: 8 4 7 / 5 6 2 / 0 1 3, depth 24, max queue size 24,053</title></circle>
+<circle cx="716.19" cy="64.00" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 25: 8 4 7 / 0 6 2 / 5 1 3, depth 25, max queue size 25,133</title></circle>
+<circle cx="741.16" cy="65.78" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 26: 0 4 7 / 8 6 2 / 5 1 3, depth 26, max queue size 24,048</title></circle>
+<circle cx="766.13" cy="64.00" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 27: 8 4 7 / 6 2 0 / 5 1 3, depth 27, max queue size 25,136</title></circle>
+<circle cx="791.10" cy="65.77" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 28: 8 4 7 / 6 2 3 / 5 1 0, depth 28, max queue size 24,054</title></circle>
+<circle cx="816.06" cy="64.00" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 29: 8 4 7 / 1 5 6 / 3 0 2, depth 29, max queue size 25,134</title></circle>
+<circle cx="841.03" cy="65.77" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 30: 8 4 7 / 1 5 6 / 3 2 0, depth 30, max queue size 24,054</title></circle>
+<circle cx="866.00" cy="64.00" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 31: 8 6 7 / 2 5 4 / 3 0 1, depth 31, max queue size 25,134</title></circle>
+<polyline points="92.00,444.09 116.97,416.18 141.94,416.18 166.90,407.19 191.87,393.64 216.84,388.26 241.81,388.26 266.77,383.52 291.74,383.52 316.71,355.61 341.68,342.38 366.65,333.72 391.61,315.28 416.58,288.62 441.55,273.88 466.52,255.36 491.48,232.80 516.45,220.64 541.42,205.58 566.39,186.20 591.35,172.92 616.32,151.47 641.29,129.86 666.26,118.38 691.23,107.12 716.19,91.20 741.16,82.96 766.13,72.80 791.10,68.77 816.06,66.37 841.03,65.38 866.00,64.23" class="series" stroke="#b54843"/>
+<circle cx="92.00" cy="444.09" r="5.2" class="point" fill="#b54843"><title>Generated depth 0: 1 2 3 / 4 5 6 / 7 8 0, depth 0, max queue size 1</title></circle>
+<circle cx="116.97" cy="416.18" r="5.2" class="point" fill="#b54843"><title>Generated depth 1: 1 2 3 / 4 5 0 / 7 8 6, depth 1, max queue size 3</title></circle>
+<circle cx="141.94" cy="416.18" r="5.2" class="point" fill="#b54843"><title>Generated depth 2: 1 2 0 / 4 5 3 / 7 8 6, depth 2, max queue size 3</title></circle>
+<circle cx="166.90" cy="407.19" r="5.2" class="point" fill="#b54843"><title>Generated depth 3: 1 0 2 / 4 5 3 / 7 8 6, depth 3, max queue size 4</title></circle>
+<circle cx="191.87" cy="393.64" r="5.2" class="point" fill="#b54843"><title>Generated depth 4: 1 5 2 / 4 0 3 / 7 8 6, depth 4, max queue size 6</title></circle>
+<circle cx="216.84" cy="388.26" r="5.2" class="point" fill="#b54843"><title>Generated depth 5: 1 5 2 / 4 8 3 / 7 0 6, depth 5, max queue size 7</title></circle>
+<circle cx="241.81" cy="388.26" r="5.2" class="point" fill="#b54843"><title>Generated depth 6: 1 5 2 / 4 8 3 / 0 7 6, depth 6, max queue size 7</title></circle>
+<circle cx="266.77" cy="383.52" r="5.2" class="point" fill="#b54843"><title>Generated depth 7: 1 5 2 / 0 8 3 / 4 7 6, depth 7, max queue size 8</title></circle>
+<circle cx="291.74" cy="383.52" r="5.2" class="point" fill="#b54843"><title>Generated depth 8: 0 5 2 / 1 8 3 / 4 7 6, depth 8, max queue size 8</title></circle>
+<circle cx="316.71" cy="355.61" r="5.2" class="point" fill="#b54843"><title>Generated depth 9: 5 0 2 / 1 8 3 / 4 7 6, depth 9, max queue size 17</title></circle>
+<circle cx="341.68" cy="342.38" r="5.2" class="point" fill="#b54843"><title>Generated depth 10: 5 8 2 / 1 0 3 / 4 7 6, depth 10, max queue size 24</title></circle>
+<circle cx="366.65" cy="333.72" r="5.2" class="point" fill="#b54843"><title>Generated depth 11: 5 8 2 / 1 7 3 / 4 0 6, depth 11, max queue size 30</title></circle>
+<circle cx="391.61" cy="315.28" r="5.2" class="point" fill="#b54843"><title>Generated depth 12: 5 8 2 / 1 7 3 / 0 4 6, depth 12, max queue size 48</title></circle>
+<circle cx="416.58" cy="288.62" r="5.2" class="point" fill="#b54843"><title>Generated depth 13: 5 8 2 / 0 7 3 / 1 4 6, depth 13, max queue size 94</title></circle>
+<circle cx="441.55" cy="273.88" r="5.2" class="point" fill="#b54843"><title>Generated depth 14: 0 8 2 / 5 7 3 / 1 4 6, depth 14, max queue size 136</title></circle>
+<circle cx="466.52" cy="255.36" r="5.2" class="point" fill="#b54843"><title>Generated depth 15: 8 0 2 / 5 7 3 / 1 4 6, depth 15, max queue size 216</title></circle>
+<circle cx="491.48" cy="232.80" r="5.2" class="point" fill="#b54843"><title>Generated depth 16: 8 7 2 / 5 0 3 / 1 4 6, depth 16, max queue size 379</title></circle>
+<circle cx="516.45" cy="220.64" r="5.2" class="point" fill="#b54843"><title>Generated depth 17: 8 7 2 / 5 4 3 / 1 0 6, depth 17, max queue size 513</title></circle>
+<circle cx="541.42" cy="205.58" r="5.2" class="point" fill="#b54843"><title>Generated depth 18: 8 7 2 / 5 4 3 / 0 1 6, depth 18, max queue size 746</title></circle>
+<circle cx="566.39" cy="186.20" r="5.2" class="point" fill="#b54843"><title>Generated depth 19: 8 7 2 / 5 4 0 / 1 6 3, depth 19, max queue size 1,208</title></circle>
+<circle cx="591.35" cy="172.92" r="5.2" class="point" fill="#b54843"><title>Generated depth 20: 8 7 0 / 5 4 2 / 1 6 3, depth 20, max queue size 1,680</title></circle>
+<circle cx="616.32" cy="151.47" r="5.2" class="point" fill="#b54843"><title>Generated depth 21: 8 0 7 / 5 4 2 / 1 6 3, depth 21, max queue size 2,863</title></circle>
+<circle cx="641.29" cy="129.86" r="5.2" class="point" fill="#b54843"><title>Generated depth 22: 8 4 7 / 5 0 2 / 1 6 3, depth 22, max queue size 4,897</title></circle>
+<circle cx="666.26" cy="118.38" r="5.2" class="point" fill="#b54843"><title>Generated depth 23: 8 4 7 / 5 6 2 / 1 0 3, depth 23, max queue size 6,512</title></circle>
+<circle cx="691.23" cy="107.12" r="5.2" class="point" fill="#b54843"><title>Generated depth 24: 8 4 7 / 5 6 2 / 0 1 3, depth 24, max queue size 8,615</title></circle>
+<circle cx="716.19" cy="91.20" r="5.2" class="point" fill="#b54843"><title>Generated depth 25: 8 4 7 / 0 6 2 / 5 1 3, depth 25, max queue size 12,792</title></circle>
+<circle cx="741.16" cy="82.96" r="5.2" class="point" fill="#b54843"><title>Generated depth 26: 0 4 7 / 8 6 2 / 5 1 3, depth 26, max queue size 15,695</title></circle>
+<circle cx="766.13" cy="72.80" r="5.2" class="point" fill="#b54843"><title>Generated depth 27: 8 4 7 / 6 2 0 / 5 1 3, depth 27, max queue size 20,199</title></circle>
+<circle cx="791.10" cy="68.77" r="5.2" class="point" fill="#b54843"><title>Generated depth 28: 8 4 7 / 6 2 3 / 5 1 0, depth 28, max queue size 22,329</title></circle>
+<circle cx="816.06" cy="66.37" r="5.2" class="point" fill="#b54843"><title>Generated depth 29: 8 4 7 / 1 5 6 / 3 0 2, depth 29, max queue size 23,701</title></circle>
+<circle cx="841.03" cy="65.38" r="5.2" class="point" fill="#b54843"><title>Generated depth 30: 8 4 7 / 1 5 6 / 3 2 0, depth 30, max queue size 24,290</title></circle>
+<circle cx="866.00" cy="64.23" r="5.2" class="point" fill="#b54843"><title>Generated depth 31: 8 6 7 / 2 5 4 / 3 0 1, depth 31, max queue size 24,995</title></circle>
+<polyline points="92.00,444.09 116.97,416.18 141.94,416.18 166.90,407.19 191.87,393.64 216.84,388.26 241.81,388.26 266.77,383.52 291.74,383.52 316.71,375.44 341.68,368.71 366.65,365.73 391.61,365.73 416.58,351.37 441.55,347.53 466.52,324.48 491.48,305.81 516.45,300.92 541.42,277.25 566.39,290.36 591.35,281.64 616.32,264.96 641.29,240.35 666.26,234.09 691.23,219.25 716.19,191.11 741.16,168.53 766.13,162.38 791.10,150.83 816.06,126.87 841.03,114.77 866.00,105.98" class="series" stroke="#3f7d4a"/>
+<circle cx="92.00" cy="444.09" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 0: 1 2 3 / 4 5 6 / 7 8 0, depth 0, max queue size 1</title></circle>
+<circle cx="116.97" cy="416.18" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 1: 1 2 3 / 4 5 0 / 7 8 6, depth 1, max queue size 3</title></circle>
+<circle cx="141.94" cy="416.18" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 2: 1 2 0 / 4 5 3 / 7 8 6, depth 2, max queue size 3</title></circle>
+<circle cx="166.90" cy="407.19" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 3: 1 0 2 / 4 5 3 / 7 8 6, depth 3, max queue size 4</title></circle>
+<circle cx="191.87" cy="393.64" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 4: 1 5 2 / 4 0 3 / 7 8 6, depth 4, max queue size 6</title></circle>
+<circle cx="216.84" cy="388.26" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 5: 1 5 2 / 4 8 3 / 7 0 6, depth 5, max queue size 7</title></circle>
+<circle cx="241.81" cy="388.26" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 6: 1 5 2 / 4 8 3 / 0 7 6, depth 6, max queue size 7</title></circle>
+<circle cx="266.77" cy="383.52" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 7: 1 5 2 / 0 8 3 / 4 7 6, depth 7, max queue size 8</title></circle>
+<circle cx="291.74" cy="383.52" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 8: 0 5 2 / 1 8 3 / 4 7 6, depth 8, max queue size 8</title></circle>
+<circle cx="316.71" cy="375.44" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 9: 5 0 2 / 1 8 3 / 4 7 6, depth 9, max queue size 10</title></circle>
+<circle cx="341.68" cy="368.71" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 10: 5 8 2 / 1 0 3 / 4 7 6, depth 10, max queue size 12</title></circle>
+<circle cx="366.65" cy="365.73" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 11: 5 8 2 / 1 7 3 / 4 0 6, depth 11, max queue size 13</title></circle>
+<circle cx="391.61" cy="365.73" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 12: 5 8 2 / 1 7 3 / 0 4 6, depth 12, max queue size 13</title></circle>
+<circle cx="416.58" cy="351.37" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 13: 5 8 2 / 0 7 3 / 1 4 6, depth 13, max queue size 19</title></circle>
+<circle cx="441.55" cy="347.53" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 14: 0 8 2 / 5 7 3 / 1 4 6, depth 14, max queue size 21</title></circle>
+<circle cx="466.52" cy="324.48" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 15: 8 0 2 / 5 7 3 / 1 4 6, depth 15, max queue size 38</title></circle>
+<circle cx="491.48" cy="305.81" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 16: 8 7 2 / 5 0 3 / 1 4 6, depth 16, max queue size 61</title></circle>
+<circle cx="516.45" cy="300.92" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 17: 8 7 2 / 5 4 3 / 1 0 6, depth 17, max queue size 69</title></circle>
+<circle cx="541.42" cy="277.25" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 18: 8 7 2 / 5 4 3 / 0 1 6, depth 18, max queue size 125</title></circle>
+<circle cx="566.39" cy="290.36" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 19: 8 7 2 / 5 4 0 / 1 6 3, depth 19, max queue size 90</title></circle>
+<circle cx="591.35" cy="281.64" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 20: 8 7 0 / 5 4 2 / 1 6 3, depth 20, max queue size 112</title></circle>
+<circle cx="616.32" cy="264.96" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 21: 8 0 7 / 5 4 2 / 1 6 3, depth 21, max queue size 170</title></circle>
+<circle cx="641.29" cy="240.35" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 22: 8 4 7 / 5 0 2 / 1 6 3, depth 22, max queue size 314</title></circle>
+<circle cx="666.26" cy="234.09" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 23: 8 4 7 / 5 6 2 / 1 0 3, depth 23, max queue size 367</title></circle>
+<circle cx="691.23" cy="219.25" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 24: 8 4 7 / 5 6 2 / 0 1 3, depth 24, max queue size 531</title></circle>
+<circle cx="716.19" cy="191.11" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 25: 8 4 7 / 0 6 2 / 5 1 3, depth 25, max queue size 1,069</title></circle>
+<circle cx="741.16" cy="168.53" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 26: 0 4 7 / 8 6 2 / 5 1 3, depth 26, max queue size 1,874</title></circle>
+<circle cx="766.13" cy="162.38" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 27: 8 4 7 / 6 2 0 / 5 1 3, depth 27, max queue size 2,183</title></circle>
+<circle cx="791.10" cy="150.83" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 28: 8 4 7 / 6 2 3 / 5 1 0, depth 28, max queue size 2,909</title></circle>
+<circle cx="816.06" cy="126.87" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 29: 8 4 7 / 1 5 6 / 3 0 2, depth 29, max queue size 5,274</title></circle>
+<circle cx="841.03" cy="114.77" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 30: 8 4 7 / 1 5 6 / 3 2 0, depth 30, max queue size 7,123</title></circle>
+<circle cx="866.00" cy="105.98" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 31: 8 6 7 / 2 5 4 / 3 0 1, depth 31, max queue size 8,862</title></circle>
+<rect x="100" y="74" width="218" height="82" rx="4" class="legend-box"/>
+<line x1="110" y1="92" x2="138" y2="92" stroke="#2f6f9f" stroke-width="3"/>
+<circle cx="124" cy="92" r="4.5" fill="#2f6f9f" stroke="white" stroke-width="1.4"/>
+<text x="148" y="96" class="legend">Uniform Cost</text>
+<line x1="110" y1="116" x2="138" y2="116" stroke="#b54843" stroke-width="3"/>
+<circle cx="124" cy="116" r="4.5" fill="#b54843" stroke="white" stroke-width="1.4"/>
+<text x="148" y="120" class="legend">A* Misplaced Tile</text>
+<line x1="110" y1="140" x2="138" y2="140" stroke="#3f7d4a" stroke-width="3"/>
+<circle cx="124" cy="140" r="4.5" fill="#3f7d4a" stroke="white" stroke-width="1.4"/>
+<text x="148" y="144" class="legend">A* Manhattan Distance</text>
+</svg>

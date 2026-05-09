@@ -1,0 +1,180 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="560" viewBox="0 0 900 560">
+<style>
+  .title { font: 700 24px Arial, sans-serif; fill: #202124; }
+  .axis-label { font: 600 15px Arial, sans-serif; fill: #333333; }
+  .tick-label { font: 12px Arial, sans-serif; fill: #4d4d4d; }
+  .grid { stroke: #d9dde3; stroke-width: 1; }
+  .max-line { stroke: #6b7280; stroke-width: 1.3; stroke-dasharray: 6 4; }
+  .max-label { font: 12px Arial, sans-serif; fill: #303236; font-weight: 700; }
+  .axis { stroke: #303236; stroke-width: 1.6; }
+  .series { fill: none; stroke-width: 2.8; }
+  .point { stroke: white; stroke-width: 1.8; }
+  .legend-box { fill: #ffffff; stroke: #d9dde3; stroke-width: 1; opacity: 0.94; }
+  .legend { font: 13px Arial, sans-serif; fill: #333333; }
+</style>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="450.0" y="34" class="title" text-anchor="middle">Nodes Expanded vs Solution Depth</text>
+<text x="450.0" y="536" class="axis-label" text-anchor="middle">Solution depth</text>
+<text x="20" y="268.0" class="axis-label" text-anchor="middle" transform="rotate(-90 20 268.0)">Nodes expanded, log10(value + 1)</text>
+<line x1="92" y1="472.00" x2="866" y2="472.00" class="grid"/>
+<text x="80" y="476.00" class="tick-label" text-anchor="end">0</text>
+<line x1="92" y1="448.64" x2="866" y2="448.64" class="grid"/>
+<text x="80" y="452.64" class="tick-label" text-anchor="end">1</text>
+<line x1="92" y1="391.20" x2="866" y2="391.20" class="grid"/>
+<text x="80" y="395.20" class="tick-label" text-anchor="end">10</text>
+<line x1="92" y1="316.49" x2="866" y2="316.49" class="grid"/>
+<text x="80" y="320.49" class="tick-label" text-anchor="end">100</text>
+<line x1="92" y1="239.21" x2="866" y2="239.21" class="grid"/>
+<text x="80" y="243.21" class="tick-label" text-anchor="end">1,000</text>
+<line x1="92" y1="161.66" x2="866" y2="161.66" class="grid"/>
+<text x="80" y="165.66" class="tick-label" text-anchor="end">10,000</text>
+<line x1="92" y1="84.07" x2="866" y2="84.07" class="grid"/>
+<text x="80" y="88.07" class="tick-label" text-anchor="end">100,000</text>
+<line x1="92.00" y1="64" x2="92.00" y2="472" class="grid"/>
+<text x="92.00" y="496" class="tick-label" text-anchor="middle">0</text>
+<line x1="141.94" y1="64" x2="141.94" y2="472" class="grid"/>
+<text x="141.94" y="496" class="tick-label" text-anchor="middle">2</text>
+<line x1="191.87" y1="64" x2="191.87" y2="472" class="grid"/>
+<text x="191.87" y="496" class="tick-label" text-anchor="middle">4</text>
+<line x1="241.81" y1="64" x2="241.81" y2="472" class="grid"/>
+<text x="241.81" y="496" class="tick-label" text-anchor="middle">6</text>
+<line x1="291.74" y1="64" x2="291.74" y2="472" class="grid"/>
+<text x="291.74" y="496" class="tick-label" text-anchor="middle">8</text>
+<line x1="341.68" y1="64" x2="341.68" y2="472" class="grid"/>
+<text x="341.68" y="496" class="tick-label" text-anchor="middle">10</text>
+<line x1="391.61" y1="64" x2="391.61" y2="472" class="grid"/>
+<text x="391.61" y="496" class="tick-label" text-anchor="middle">12</text>
+<line x1="441.55" y1="64" x2="441.55" y2="472" class="grid"/>
+<text x="441.55" y="496" class="tick-label" text-anchor="middle">14</text>
+<line x1="491.48" y1="64" x2="491.48" y2="472" class="grid"/>
+<text x="491.48" y="496" class="tick-label" text-anchor="middle">16</text>
+<line x1="541.42" y1="64" x2="541.42" y2="472" class="grid"/>
+<text x="541.42" y="496" class="tick-label" text-anchor="middle">18</text>
+<line x1="591.35" y1="64" x2="591.35" y2="472" class="grid"/>
+<text x="591.35" y="496" class="tick-label" text-anchor="middle">20</text>
+<line x1="641.29" y1="64" x2="641.29" y2="472" class="grid"/>
+<text x="641.29" y="496" class="tick-label" text-anchor="middle">22</text>
+<line x1="691.23" y1="64" x2="691.23" y2="472" class="grid"/>
+<text x="691.23" y="496" class="tick-label" text-anchor="middle">24</text>
+<line x1="741.16" y1="64" x2="741.16" y2="472" class="grid"/>
+<text x="741.16" y="496" class="tick-label" text-anchor="middle">26</text>
+<line x1="791.10" y1="64" x2="791.10" y2="472" class="grid"/>
+<text x="791.10" y="496" class="tick-label" text-anchor="middle">28</text>
+<line x1="841.03" y1="64" x2="841.03" y2="472" class="grid"/>
+<text x="841.03" y="496" class="tick-label" text-anchor="middle">30</text>
+<line x1="866.00" y1="64" x2="866.00" y2="472" class="grid"/>
+<text x="866.00" y="496" class="tick-label" text-anchor="middle">31</text>
+<line x1="92" y1="472" x2="866" y2="472" class="axis"/>
+<line x1="92" y1="64" x2="92" y2="472" class="axis"/>
+<line x1="92" y1="64.00" x2="866" y2="64.00" class="max-line"/>
+<text x="860" y="57.00" class="max-label" text-anchor="end">max 181,438</text>
+<polyline points="92.00,472.00 116.97,434.98 141.94,425.29 166.90,374.61 191.87,364.92 216.84,351.25 241.81,326.98 266.77,309.31 291.74,302.06 316.71,270.63 341.68,260.01 366.65,247.88 391.61,225.81 416.58,209.93 441.55,203.64 466.52,174.12 491.48,164.69 516.45,153.74 541.42,142.99 566.39,121.55 591.35,116.85 616.32,93.92 641.29,88.85 666.26,83.28 691.23,74.41 716.19,70.05 741.16,68.93 766.13,65.86 791.10,64.85 816.06,64.17 841.03,64.02 866.00,64.00" class="series" stroke="#2f6f9f"/>
+<circle cx="92.00" cy="472.00" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 0: 1 2 3 / 4 5 6 / 7 8 0, depth 0, nodes expanded 0</title></circle>
+<circle cx="116.97" cy="434.98" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 1: 1 2 3 / 4 5 0 / 7 8 6, depth 1, nodes expanded 2</title></circle>
+<circle cx="141.94" cy="425.29" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 2: 1 2 0 / 4 5 3 / 7 8 6, depth 2, nodes expanded 3</title></circle>
+<circle cx="166.90" cy="374.61" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 3: 1 0 2 / 4 5 3 / 7 8 6, depth 3, nodes expanded 17</title></circle>
+<circle cx="191.87" cy="364.92" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 4: 1 5 2 / 4 0 3 / 7 8 6, depth 4, nodes expanded 23</title></circle>
+<circle cx="216.84" cy="351.25" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 5: 1 5 2 / 4 8 3 / 7 0 6, depth 5, nodes expanded 35</title></circle>
+<circle cx="241.81" cy="326.98" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 6: 1 5 2 / 4 8 3 / 0 7 6, depth 6, nodes expanded 73</title></circle>
+<circle cx="266.77" cy="309.31" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 7: 1 5 2 / 0 8 3 / 4 7 6, depth 7, nodes expanded 124</title></circle>
+<circle cx="291.74" cy="302.06" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 8: 0 5 2 / 1 8 3 / 4 7 6, depth 8, nodes expanded 154</title></circle>
+<circle cx="316.71" cy="270.63" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 9: 5 0 2 / 1 8 3 / 4 7 6, depth 9, nodes expanded 393</title></circle>
+<circle cx="341.68" cy="260.01" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 10: 5 8 2 / 1 0 3 / 4 7 6, depth 10, nodes expanded 539</title></circle>
+<circle cx="366.65" cy="247.88" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 11: 5 8 2 / 1 7 3 / 4 0 6, depth 11, nodes expanded 773</title></circle>
+<circle cx="391.61" cy="225.81" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 12: 5 8 2 / 1 7 3 / 0 4 6, depth 12, nodes expanded 1,489</title></circle>
+<circle cx="416.58" cy="209.93" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 13: 5 8 2 / 0 7 3 / 1 4 6, depth 13, nodes expanded 2,386</title></circle>
+<circle cx="441.55" cy="203.64" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 14: 0 8 2 / 5 7 3 / 1 4 6, depth 14, nodes expanded 2,876</title></circle>
+<circle cx="466.52" cy="174.12" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 15: 8 0 2 / 5 7 3 / 1 4 6, depth 15, nodes expanded 6,908</title></circle>
+<circle cx="491.48" cy="164.69" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 16: 8 7 2 / 5 0 3 / 1 4 6, depth 16, nodes expanded 9,138</title></circle>
+<circle cx="516.45" cy="153.74" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 17: 8 7 2 / 5 4 3 / 1 0 6, depth 17, nodes expanded 12,649</title></circle>
+<circle cx="541.42" cy="142.99" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 18: 8 7 2 / 5 4 3 / 0 1 6, depth 18, nodes expanded 17,402</title></circle>
+<circle cx="566.39" cy="121.55" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 19: 8 7 2 / 5 4 0 / 1 6 3, depth 19, nodes expanded 32,884</title></circle>
+<circle cx="591.35" cy="116.85" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 20: 8 7 0 / 5 4 2 / 1 6 3, depth 20, nodes expanded 37,809</title></circle>
+<circle cx="616.32" cy="93.92" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 21: 8 0 7 / 5 4 2 / 1 6 3, depth 21, nodes expanded 74,668</title></circle>
+<circle cx="641.29" cy="88.85" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 22: 8 4 7 / 5 0 2 / 1 6 3, depth 22, nodes expanded 86,784</title></circle>
+<circle cx="666.26" cy="83.28" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 23: 8 4 7 / 5 6 2 / 1 0 3, depth 23, nodes expanded 102,392</title></circle>
+<circle cx="691.23" cy="74.41" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 24: 8 4 7 / 5 6 2 / 0 1 3, depth 24, nodes expanded 133,213</title></circle>
+<circle cx="716.19" cy="70.05" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 25: 8 4 7 / 0 6 2 / 5 1 3, depth 25, nodes expanded 151,626</title></circle>
+<circle cx="741.16" cy="68.93" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 26: 0 4 7 / 8 6 2 / 5 1 3, depth 26, nodes expanded 156,726</title></circle>
+<circle cx="766.13" cy="65.86" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 27: 8 4 7 / 6 2 0 / 5 1 3, depth 27, nodes expanded 171,708</title></circle>
+<circle cx="791.10" cy="64.85" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 28: 8 4 7 / 6 2 3 / 5 1 0, depth 28, nodes expanded 176,925</title></circle>
+<circle cx="816.06" cy="64.17" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 29: 8 4 7 / 1 5 6 / 3 0 2, depth 29, nodes expanded 180,532</title></circle>
+<circle cx="841.03" cy="64.02" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 30: 8 4 7 / 1 5 6 / 3 2 0, depth 30, nodes expanded 181,339</title></circle>
+<circle cx="866.00" cy="64.00" r="5.2" class="point" fill="#2f6f9f"><title>Generated depth 31: 8 6 7 / 2 5 4 / 3 0 1, depth 31, nodes expanded 181,438</title></circle>
+<polyline points="92.00,472.00 116.97,448.64 141.94,434.98 166.90,425.29 191.87,417.77 216.84,411.63 241.81,406.43 266.77,401.93 291.74,397.96 316.71,376.54 341.68,357.40 366.65,351.25 391.61,333.48 416.58,305.49 441.55,294.15 466.52,274.81 491.48,255.62 516.45,244.48 541.42,231.83 566.39,215.80 591.35,204.48 616.32,184.71 641.29,165.65 666.26,154.89 691.23,143.78 716.19,126.73 741.16,116.80 766.13,103.29 791.10,95.61 816.06,84.73 841.03,79.24 866.00,71.82" class="series" stroke="#b54843"/>
+<circle cx="92.00" cy="472.00" r="5.2" class="point" fill="#b54843"><title>Generated depth 0: 1 2 3 / 4 5 6 / 7 8 0, depth 0, nodes expanded 0</title></circle>
+<circle cx="116.97" cy="448.64" r="5.2" class="point" fill="#b54843"><title>Generated depth 1: 1 2 3 / 4 5 0 / 7 8 6, depth 1, nodes expanded 1</title></circle>
+<circle cx="141.94" cy="434.98" r="5.2" class="point" fill="#b54843"><title>Generated depth 2: 1 2 0 / 4 5 3 / 7 8 6, depth 2, nodes expanded 2</title></circle>
+<circle cx="166.90" cy="425.29" r="5.2" class="point" fill="#b54843"><title>Generated depth 3: 1 0 2 / 4 5 3 / 7 8 6, depth 3, nodes expanded 3</title></circle>
+<circle cx="191.87" cy="417.77" r="5.2" class="point" fill="#b54843"><title>Generated depth 4: 1 5 2 / 4 0 3 / 7 8 6, depth 4, nodes expanded 4</title></circle>
+<circle cx="216.84" cy="411.63" r="5.2" class="point" fill="#b54843"><title>Generated depth 5: 1 5 2 / 4 8 3 / 7 0 6, depth 5, nodes expanded 5</title></circle>
+<circle cx="241.81" cy="406.43" r="5.2" class="point" fill="#b54843"><title>Generated depth 6: 1 5 2 / 4 8 3 / 0 7 6, depth 6, nodes expanded 6</title></circle>
+<circle cx="266.77" cy="401.93" r="5.2" class="point" fill="#b54843"><title>Generated depth 7: 1 5 2 / 0 8 3 / 4 7 6, depth 7, nodes expanded 7</title></circle>
+<circle cx="291.74" cy="397.96" r="5.2" class="point" fill="#b54843"><title>Generated depth 8: 0 5 2 / 1 8 3 / 4 7 6, depth 8, nodes expanded 8</title></circle>
+<circle cx="316.71" cy="376.54" r="5.2" class="point" fill="#b54843"><title>Generated depth 9: 5 0 2 / 1 8 3 / 4 7 6, depth 9, nodes expanded 16</title></circle>
+<circle cx="341.68" cy="357.40" r="5.2" class="point" fill="#b54843"><title>Generated depth 10: 5 8 2 / 1 0 3 / 4 7 6, depth 10, nodes expanded 29</title></circle>
+<circle cx="366.65" cy="351.25" r="5.2" class="point" fill="#b54843"><title>Generated depth 11: 5 8 2 / 1 7 3 / 4 0 6, depth 11, nodes expanded 35</title></circle>
+<circle cx="391.61" cy="333.48" r="5.2" class="point" fill="#b54843"><title>Generated depth 12: 5 8 2 / 1 7 3 / 0 4 6, depth 12, nodes expanded 60</title></circle>
+<circle cx="416.58" cy="305.49" r="5.2" class="point" fill="#b54843"><title>Generated depth 13: 5 8 2 / 0 7 3 / 1 4 6, depth 13, nodes expanded 139</title></circle>
+<circle cx="441.55" cy="294.15" r="5.2" class="point" fill="#b54843"><title>Generated depth 14: 0 8 2 / 5 7 3 / 1 4 6, depth 14, nodes expanded 195</title></circle>
+<circle cx="466.52" cy="274.81" r="5.2" class="point" fill="#b54843"><title>Generated depth 15: 8 0 2 / 5 7 3 / 1 4 6, depth 15, nodes expanded 347</title></circle>
+<circle cx="491.48" cy="255.62" r="5.2" class="point" fill="#b54843"><title>Generated depth 16: 8 7 2 / 5 0 3 / 1 4 6, depth 16, nodes expanded 614</title></circle>
+<circle cx="516.45" cy="244.48" r="5.2" class="point" fill="#b54843"><title>Generated depth 17: 8 7 2 / 5 4 3 / 1 0 6, depth 17, nodes expanded 855</title></circle>
+<circle cx="541.42" cy="231.83" r="5.2" class="point" fill="#b54843"><title>Generated depth 18: 8 7 2 / 5 4 3 / 0 1 6, depth 18, nodes expanded 1,245</title></circle>
+<circle cx="566.39" cy="215.80" r="5.2" class="point" fill="#b54843"><title>Generated depth 19: 8 7 2 / 5 4 0 / 1 6 3, depth 19, nodes expanded 2,004</title></circle>
+<circle cx="591.35" cy="204.48" r="5.2" class="point" fill="#b54843"><title>Generated depth 20: 8 7 0 / 5 4 2 / 1 6 3, depth 20, nodes expanded 2,805</title></circle>
+<circle cx="616.32" cy="184.71" r="5.2" class="point" fill="#b54843"><title>Generated depth 21: 8 0 7 / 5 4 2 / 1 6 3, depth 21, nodes expanded 5,045</title></circle>
+<circle cx="641.29" cy="165.65" r="5.2" class="point" fill="#b54843"><title>Generated depth 22: 8 4 7 / 5 0 2 / 1 6 3, depth 22, nodes expanded 8,882</title></circle>
+<circle cx="666.26" cy="154.89" r="5.2" class="point" fill="#b54843"><title>Generated depth 23: 8 4 7 / 5 6 2 / 1 0 3, depth 23, nodes expanded 12,224</title></circle>
+<circle cx="691.23" cy="143.78" r="5.2" class="point" fill="#b54843"><title>Generated depth 24: 8 4 7 / 5 6 2 / 0 1 3, depth 24, nodes expanded 17,000</title></circle>
+<circle cx="716.19" cy="126.73" r="5.2" class="point" fill="#b54843"><title>Generated depth 25: 8 4 7 / 0 6 2 / 5 1 3, depth 25, nodes expanded 28,197</title></circle>
+<circle cx="741.16" cy="116.80" r="5.2" class="point" fill="#b54843"><title>Generated depth 26: 0 4 7 / 8 6 2 / 5 1 3, depth 26, nodes expanded 37,856</title></circle>
+<circle cx="766.13" cy="103.29" r="5.2" class="point" fill="#b54843"><title>Generated depth 27: 8 4 7 / 6 2 0 / 5 1 3, depth 27, nodes expanded 56,537</title></circle>
+<circle cx="791.10" cy="95.61" r="5.2" class="point" fill="#b54843"><title>Generated depth 28: 8 4 7 / 6 2 3 / 5 1 0, depth 28, nodes expanded 71,009</title></circle>
+<circle cx="816.06" cy="84.73" r="5.2" class="point" fill="#b54843"><title>Generated depth 29: 8 4 7 / 1 5 6 / 3 0 2, depth 29, nodes expanded 98,058</title></circle>
+<circle cx="841.03" cy="79.24" r="5.2" class="point" fill="#b54843"><title>Generated depth 30: 8 4 7 / 1 5 6 / 3 2 0, depth 30, nodes expanded 115,412</title></circle>
+<circle cx="866.00" cy="71.82" r="5.2" class="point" fill="#b54843"><title>Generated depth 31: 8 6 7 / 2 5 4 / 3 0 1, depth 31, nodes expanded 143,848</title></circle>
+<polyline points="92.00,472.00 116.97,448.64 141.94,434.98 166.90,425.29 191.87,417.77 216.84,411.63 241.81,406.43 266.77,401.93 291.74,397.96 316.71,385.57 341.68,383.08 366.65,380.75 391.61,378.58 416.58,363.54 441.55,358.54 466.52,338.86 491.48,320.76 516.45,315.51 541.42,291.99 566.39,304.08 591.35,297.02 616.32,281.78 641.29,261.15 666.26,253.55 691.23,241.11 716.19,216.28 741.16,195.91 766.13,190.25 791.10,179.64 816.06,156.72 841.03,144.79 866.00,136.34" class="series" stroke="#3f7d4a"/>
+<circle cx="92.00" cy="472.00" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 0: 1 2 3 / 4 5 6 / 7 8 0, depth 0, nodes expanded 0</title></circle>
+<circle cx="116.97" cy="448.64" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 1: 1 2 3 / 4 5 0 / 7 8 6, depth 1, nodes expanded 1</title></circle>
+<circle cx="141.94" cy="434.98" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 2: 1 2 0 / 4 5 3 / 7 8 6, depth 2, nodes expanded 2</title></circle>
+<circle cx="166.90" cy="425.29" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 3: 1 0 2 / 4 5 3 / 7 8 6, depth 3, nodes expanded 3</title></circle>
+<circle cx="191.87" cy="417.77" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 4: 1 5 2 / 4 0 3 / 7 8 6, depth 4, nodes expanded 4</title></circle>
+<circle cx="216.84" cy="411.63" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 5: 1 5 2 / 4 8 3 / 7 0 6, depth 5, nodes expanded 5</title></circle>
+<circle cx="241.81" cy="406.43" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 6: 1 5 2 / 4 8 3 / 0 7 6, depth 6, nodes expanded 6</title></circle>
+<circle cx="266.77" cy="401.93" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 7: 1 5 2 / 0 8 3 / 4 7 6, depth 7, nodes expanded 7</title></circle>
+<circle cx="291.74" cy="397.96" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 8: 0 5 2 / 1 8 3 / 4 7 6, depth 8, nodes expanded 8</title></circle>
+<circle cx="316.71" cy="385.57" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 9: 5 0 2 / 1 8 3 / 4 7 6, depth 9, nodes expanded 12</title></circle>
+<circle cx="341.68" cy="383.08" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 10: 5 8 2 / 1 0 3 / 4 7 6, depth 10, nodes expanded 13</title></circle>
+<circle cx="366.65" cy="380.75" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 11: 5 8 2 / 1 7 3 / 4 0 6, depth 11, nodes expanded 14</title></circle>
+<circle cx="391.61" cy="378.58" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 12: 5 8 2 / 1 7 3 / 0 4 6, depth 12, nodes expanded 15</title></circle>
+<circle cx="416.58" cy="363.54" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 13: 5 8 2 / 0 7 3 / 1 4 6, depth 13, nodes expanded 24</title></circle>
+<circle cx="441.55" cy="358.54" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 14: 0 8 2 / 5 7 3 / 1 4 6, depth 14, nodes expanded 28</title></circle>
+<circle cx="466.52" cy="338.86" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 15: 8 0 2 / 5 7 3 / 1 4 6, depth 15, nodes expanded 51</title></circle>
+<circle cx="491.48" cy="320.76" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 16: 8 7 2 / 5 0 3 / 1 4 6, depth 16, nodes expanded 88</title></circle>
+<circle cx="516.45" cy="315.51" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 17: 8 7 2 / 5 4 3 / 1 0 6, depth 17, nodes expanded 103</title></circle>
+<circle cx="541.42" cy="291.99" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 18: 8 7 2 / 5 4 3 / 0 1 6, depth 18, nodes expanded 208</title></circle>
+<circle cx="566.39" cy="304.08" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 19: 8 7 2 / 5 4 0 / 1 6 3, depth 19, nodes expanded 145</title></circle>
+<circle cx="591.35" cy="297.02" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 20: 8 7 0 / 5 4 2 / 1 6 3, depth 20, nodes expanded 179</title></circle>
+<circle cx="616.32" cy="281.78" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 21: 8 0 7 / 5 4 2 / 1 6 3, depth 21, nodes expanded 282</title></circle>
+<circle cx="641.29" cy="261.15" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 22: 8 4 7 / 5 0 2 / 1 6 3, depth 22, nodes expanded 521</title></circle>
+<circle cx="666.26" cy="253.55" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 23: 8 4 7 / 5 6 2 / 1 0 3, depth 23, nodes expanded 653</title></circle>
+<circle cx="691.23" cy="241.11" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 24: 8 4 7 / 5 6 2 / 0 1 3, depth 24, nodes expanded 945</title></circle>
+<circle cx="716.19" cy="216.28" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 25: 8 4 7 / 0 6 2 / 5 1 3, depth 25, nodes expanded 1,976</title></circle>
+<circle cx="741.16" cy="195.91" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 26: 0 4 7 / 8 6 2 / 5 1 3, depth 26, nodes expanded 3,618</title></circle>
+<circle cx="766.13" cy="190.25" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 27: 8 4 7 / 6 2 0 / 5 1 3, depth 27, nodes expanded 4,279</title></circle>
+<circle cx="791.10" cy="179.64" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 28: 8 4 7 / 6 2 3 / 5 1 0, depth 28, nodes expanded 5,864</title></circle>
+<circle cx="816.06" cy="156.72" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 29: 8 4 7 / 1 5 6 / 3 0 2, depth 29, nodes expanded 11,577</title></circle>
+<circle cx="841.03" cy="144.79" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 30: 8 4 7 / 1 5 6 / 3 2 0, depth 30, nodes expanded 16,497</title></circle>
+<circle cx="866.00" cy="136.34" r="5.2" class="point" fill="#3f7d4a"><title>Generated depth 31: 8 6 7 / 2 5 4 / 3 0 1, depth 31, nodes expanded 21,197</title></circle>
+<rect x="100" y="74" width="218" height="82" rx="4" class="legend-box"/>
+<line x1="110" y1="92" x2="138" y2="92" stroke="#2f6f9f" stroke-width="3"/>
+<circle cx="124" cy="92" r="4.5" fill="#2f6f9f" stroke="white" stroke-width="1.4"/>
+<text x="148" y="96" class="legend">Uniform Cost</text>
+<line x1="110" y1="116" x2="138" y2="116" stroke="#b54843" stroke-width="3"/>
+<circle cx="124" cy="116" r="4.5" fill="#b54843" stroke="white" stroke-width="1.4"/>
+<text x="148" y="120" class="legend">A* Misplaced Tile</text>
+<line x1="110" y1="140" x2="138" y2="140" stroke="#3f7d4a" stroke-width="3"/>
+<circle cx="124" cy="140" r="4.5" fill="#3f7d4a" stroke="white" stroke-width="1.4"/>
+<text x="148" y="144" class="legend">A* Manhattan Distance</text>
+</svg>
